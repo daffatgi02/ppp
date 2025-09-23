@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
+  font-family: "Black Ops One", cursive;
+}
+
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+main {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+main .killed-text {
+  display: none;
+  position: absolute;
+  top: 80vh;
+  left: 48%;
+  font-weight: 700;
+  font-size: 0.8vw;
+  text-align: center;
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+  opacity: 1;
+}
+main .kill-feed-wrapper {
+  position: absolute;
+  right: 2vw;
+  top: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: end;
+}
+main .kill-feed-wrapper *{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+main .kill-feed-wrapper .kill-feed {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+main .kill-feed-wrapper .kill-feed .other {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+main .kill-feed-wrapper .kill-feed .other div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 7px 15px;
+  height: 34px;
+}
+main .kill-feed-wrapper .kill-feed .wrapper {
+  padding: 7px 15px;
+  background: rgba(0, 0, 0, 0.5);
+  gap: 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  align-items: center;
+  border-radius: 3px;
+  display: flex;
+}
+main .kill-feed-wrapper .kill-feed .wrapper img {
+  max-height: 20px;
+}
+main .hud {
+  position: absolute;
+  right: 2vw;
+  bottom: 2vh;
+  width: 306px;
+  height: 98px;
+  display: none;
+}
+main .hud .streak {
+  position: absolute;
+  right: 159px;
+  top: -33px;
+  width: 104px;
+  height: 34px;
+  z-index: 10;
+  transition: right 0.3s;
+  display: none;
+}
+main .hud .streak .bg {
+  position: absolute;
+  z-index: -1;
+}
+main .hud .streak .content {
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 14px;
+  padding-right: 10px;
+}
+main .hud .weapon {
+  position: absolute;
+  right: 0;
+  top: -33px;
+  width: 176px;
+  height: 34px;
+  z-index: 10;
+}
+main .hud .weapon .bg {
+  position: absolute;
+  z-index: -1;
+}
+main .hud .weapon .content {
+  width: 100%;
+  height: 100%;
+  gap: 14px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 14px;
+  padding-right: 10px;
+}
+main .hud .weapon .content .weapon-img {
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 20px;
+}
+main .hud .weapon .content .weapon-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+main .hud .weapon .content .ammo-wrap {
+  display: flex;
+  gap: 5px;
+}
+main .hud .weapon .content .ammo-wrap .text-wrap {
+  display: flex;
+  align-items: end;
+}
+main .hud .weapon .content .ammo-wrap .ammo {
+  color: #FFF;
+  font-size: 14px;
+}
+main .hud .weapon .content .ammo-wrap .ammo-clip {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  padding-bottom: 2px;
+}
+main .hud .bottom {
+  position: relative;
+  z-index: 10;
+}
+main .hud .bottom .bg {
+  z-index: -1;
+  position: absolute;
+}
+main .hud .bottom .content {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+main .hud .bottom .content .health, main .hud .bottom .content .armor {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 3px;
+}
+main .hud .bottom .content .health .bar, main .hud .bottom .content .armor .bar {
+  width: 252px;
+  display: flex;
+  justify-content: end;
+}
+main .hud .bottom .content .health .bar .bg-bar, main .hud .bottom .content .armor .bar .bg-bar {
+  position: absolute;
+}
+main .hud .bottom .content .health.armor .icon, main .hud .bottom .content .armor.armor .icon {
+  background: #4881d6;
+}
+main .hud .bottom .content .health .icon, main .hud .bottom .content .armor .icon {
+  width: 28px;
+  height: 20px;
+  border-radius: 1px;
+  background: rgb(201, 72, 72);
+  box-shadow: 0px 0px 10px 0px rgba(201, 72, 72, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ios-notifications {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@keyframes show {
+  0%{
+    transform: scale(0); 
+    opacity: 0;
+    visibility: hidden;
+  } 
+  100%{
+    transform: scale(1);  
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.notify-container {
+  position: fixed;
+  right: 3rem;
+  top: 2rem;
+  z-index: 1000; 
+}
+
+.ios-notifications {
+  position: relative;
+  transition: padding-top 1s;
+}
+
+.ios-notifications:empty {
+  padding-top: 0px;
+}
+
+.ios-notifications__item {
+  position: relative;
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(10, 10, 10, 0.7);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 10px;
+  animation-name: show;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1; 
+  transition: all .5s ease-out;
+  color: #fff;
+}
+
+.ios-notifications__item .text-font{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+.notif-hide{ 
+  transform: translateX(100%);
+  opacity: 0;
+  
+  visibility: hidden;   
+}
+
+.notification:first-child {
+  margin-top: -38px;
+}
+
+.notify-container .btn{
+  position: absolute;
+  right: 5rem;
+  top: 8rem;
+}

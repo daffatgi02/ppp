@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wais - Squad</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' crossorigin='anonymous' />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- JQuery -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@500&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper" >
+
+        <div class="header">
+            <div class="icon">
+                <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25.6423 18.2941C27.5442 19.2962 28.6118 20.9505 28.4262 22.6495C28.3326 23.6948 28.3801 23.6948 26.9414 23.869C26.0595 23.9568 20.4457 24 14.7384 24C8.24264 24 1.46779 23.9568 0.958521 23.8258C-0.943427 23.3463 0.170126 20.0362 2.67488 18.4683C4.67036 17.292 8.70737 15.4634 9.82092 15.2446C11.3517 14.9394 11.5373 14.0251 9.82092 11.2808C9.44973 10.6272 9.03252 8.75401 8.98501 6.75122C8.93898 3.52753 9.54179 1.35052 12.5573 0.262021C13.1141 0.0878045 13.7644 0 14.3672 0C16.3627 0 18.2186 1.0453 19.007 2.57004C20.0745 4.61742 19.5638 9.97491 18.4502 11.9345C17.105 14.1561 17.2431 14.853 18.7293 15.2014C19.6573 15.4188 22.7203 16.7693 25.6423 18.2941ZM35.8038 15.5498C37.2886 16.2899 38.1245 17.6404 37.9849 18.9477C37.9389 19.7324 37.9389 19.7756 36.8253 19.9066C36.2685 19.9944 33.3451 20.0376 29.9124 20.0376C29.3096 18.6871 28.1485 17.4676 26.5717 16.6843C24.7618 15.7254 22.6283 14.7247 21.004 14.0711C22.0715 13.5916 22.9994 13.2 23.4167 13.1122C24.5762 12.8502 24.7158 12.2411 23.4167 10.0627C23.0915 9.54007 22.7203 8.05854 22.6743 6.49059C22.6283 3.96376 23.2311 2.2216 25.5517 1.39512C26.0164 1.26411 26.5257 1.1777 26.9904 1.1777C28.5212 1.1777 29.9599 1.96237 30.5627 3.18188C31.3511 4.79303 30.9799 8.97422 30.1455 10.5422C29.124 12.2843 29.2175 12.807 30.3771 13.069C31.1195 13.2432 33.4861 14.3317 35.8053 15.5512L35.8038 15.5498Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="title-wrap">
+                <div class="title">SQUAD</div>
+                <div class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, itaque.</div>
+            </div>
+        </div>
+
+        <div class="buttons-wrapper">
+            <div class="btn category squad_list" data-page="squads">Squad List</div>
+            <div class="btn category squad_create" data-page="creates">Create Squad</div>
+            <div class="btn category squad_invites" data-page="invites">Invites</div>
+            <div class="btn leave-squad" data-room="">Leave</div>
+        </div>
+
+        <div class="content">
+            <div class="squads" ></div>
+
+            <div class="invites"></div>
+
+            <div class="creates">
+                <div class="create-squad">
+                    <input id="newsquadname" type="text" placeholder="Squad Name">
+                    <div class="privateselect">
+                        <i class="fa-solid fa-unlock"></i>
+                    </div>
+                    <div class="create-squads">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="has_squad">
+                <div class="i-players"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="left-wrapper" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

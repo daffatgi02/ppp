@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html {
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.progress-container {
+    display: none;
+    z-index: 5;
+    color: #fff;
+    width:20.3%;
+    position: fixed;
+    margin-top:51.60%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    box-shadow: rgba(0, 0, 0, 0.268) 0px 22px 70px 4px;
+    margin-right: auto;
+}
+
+.progress-bar-container {
+    width:100%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.35);
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.268) 0px 22px 70px 4px;
+}
+
+.progress-bar {
+    background:#ffffff;
+    width: 0%;
+    height: 15.80px;
+    transition: width 0.2s;
+    transition-timing-function: ease-out;
+}

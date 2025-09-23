@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA VIP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div class="back">
+            <div class="buttons-wrapper">
+                <div class="button" onclick="back()">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="settings">
+        <div class="header">
+            <div class="icon">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.3153 0.111043C17.9348 2.06661e-08 17.5041 0 16.6426 0C15.781 0 15.3504 2.06661e-08 14.9698 0.111043C14.4128 0.273567 13.9208 0.606677 13.563 1.06348C13.3185 1.37556 13.1585 1.7755 12.8387 2.57538C12.3787 3.7252 11.1023 4.31729 9.92743 3.9258L8.87195 3.5741C8.12324 3.32454 7.74888 3.19974 7.38183 3.17836C6.84267 3.14694 6.30606 3.27363 5.83786 3.54283C5.51914 3.72611 5.24012 4.00515 4.68206 4.56321C4.08893 5.15633 3.79236 5.45288 3.60397 5.79141C3.32716 6.28875 3.21008 6.85922 3.26858 7.42538C3.3084 7.81073 3.46415 8.20015 3.77568 8.97896C4.26355 10.1986 3.79421 11.5921 2.66784 12.268L2.15468 12.576C1.36896 13.0474 0.976105 13.2832 0.690741 13.6077C0.438217 13.8949 0.247808 14.2312 0.131458 14.5955C-2.75549e-08 15.0072 0 15.4698 0 16.3953C0 17.4912 -1.37774e-08 18.0389 0.174969 18.508C0.329578 18.9224 0.581048 19.2937 0.908389 19.5913C1.27885 19.9278 1.78251 20.1294 2.78978 20.5323C3.81917 20.9439 4.34919 22.0867 3.99858 23.1385L3.60073 24.3322C3.32517 25.1588 3.18737 25.5722 3.17485 25.9783C3.15978 26.4667 3.27395 26.9502 3.5058 27.3802C3.69863 27.738 4.00676 28.0461 4.62294 28.6622C5.23914 29.2784 5.54725 29.5864 5.90488 29.7793C6.3349 30.0112 6.81852 30.1255 7.30683 30.1103C7.71295 30.0977 8.12631 29.96 8.95304 29.6844L9.92752 29.3595C11.1023 28.9681 12.3787 29.56 12.8387 30.7098C13.1585 31.5096 13.3185 31.9095 13.563 32.2217C13.9208 32.6784 14.4128 33.0117 14.9698 33.1742C15.3504 33.2852 15.781 33.2851 16.6426 33.2851C17.5041 33.2851 17.9348 33.2852 18.3153 33.1742C18.8723 33.0117 19.3644 32.6784 19.7222 32.2217C19.9667 31.9095 20.1266 31.5096 20.4465 30.7098C20.9064 29.56 22.1829 28.9681 23.3575 29.3599L24.3313 29.6846C25.158 29.9601 25.5715 30.0979 25.9776 30.1105C26.4659 30.1255 26.9495 30.0114 27.3794 29.7795C27.7371 29.5866 28.0453 29.2785 28.6615 28.6624C29.2776 28.0463 29.5857 27.738 29.7786 27.3804C30.0104 26.9504 30.1245 26.4667 30.1096 25.9785C30.097 25.5724 29.9592 25.1589 29.6837 24.3322L29.2861 23.1395C28.9353 22.0873 29.4655 20.9441 30.4953 20.5323C31.5025 20.1294 32.0063 19.9278 32.3768 19.5913C32.7041 19.2937 32.9556 18.9224 33.1102 18.508C33.2851 18.0389 33.2851 17.4912 33.2851 16.3953C33.2851 15.4698 33.2851 15.0072 33.1537 14.5955C33.0374 14.2312 32.8469 13.8949 32.5945 13.6077C32.309 13.2832 31.9162 13.0474 31.1305 12.576L30.6166 12.2677C29.4903 11.5919 29.0208 10.1985 29.5088 8.97882C29.8202 8.20004 29.9761 7.8106 30.0158 7.42523C30.0742 6.85907 29.9572 6.28862 29.6804 5.79127C29.4919 5.45276 29.1955 5.15618 28.6023 4.56306C28.0442 4.00502 27.7652 3.72598 27.4466 3.54271C26.9784 3.27348 26.4417 3.14681 25.9025 3.17821C25.5354 3.19961 25.1612 3.32439 24.4124 3.57396L23.3577 3.92556C22.1829 4.31716 20.9064 3.72516 20.4465 2.57538C20.1266 1.7755 19.9667 1.37556 19.7222 1.06348C19.3644 0.606677 18.8723 0.273567 18.3153 0.111043Z" fill="white"/>
+                    <path d="M22.5858 16.6426C22.5858 19.9253 19.9248 22.5863 16.642 22.5863C13.3593 22.5863 10.6982 19.9253 10.6982 16.6426C10.6982 13.3598 13.3593 10.6988 16.642 10.6988C19.9248 10.6988 22.5858 13.3598 22.5858 16.6426Z" fill="#29292A" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="title-wrapper">
+                <div class="title">V.I.P</div>
+                <div class="subtitle">Through this section you can create a private room according to your wishes.</div>
+            </div>
+        </div>
+
+        <div class="select">
+            <div class="title">Buy V.I.P</div>
+            <div class="reset-btn btn">Market</div>
+        </div>
+
+        <div class="settings-wrapper">
+            <div class="setting">
+                <div class="title">Colorful Nick</div>
+                <div class="content">
+                    <div class="subtitle">Will affect indicators and displays such as Killfeed, Deathcam, Kill Message, etc.</div>
+                    <div class="btn-wrap">
+                        <button id="nickBtn" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting">
+                <div class="title">Deathcam Message</div>
+                <div class="content">
+                    <div class="subtitle">Customize the message that appears under the Deathcam when you kill someone</div>
+                    <div class="btn-wrap">
+                        <button id="messageBtn" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIVATE LOBBY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="back">
+            <div class="buttons-wrapper">
+                <div class="button">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="password-wrap">
+            <div class="box">
+                <input type="text" placeholder="Şifre" id="joinPassword"/>
+                <div class="btn-wrapper">
+                    <div class="btn join">JOIN</div>
+                    <div class="btn cancel">CANCEL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lobbies">
+            <div class="header">
+                <div class="icon">
+                    <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.5547 8.59133C29.5547 9.18634 29.0645 9.67976 28.4734 9.67976H2.52369C1.93261 9.67976 1.44245 9.18634 1.44245 8.59133C1.44245 7.99632 1.93261 7.5029 2.52369 7.5029H3.99417L4.542 4.87616C5.06099 2.33649 6.14223 0 10.4384 0H20.5588C24.8549 0 25.9361 2.33649 26.4551 4.87616L27.0029 7.5029H28.4734C29.0645 7.5029 29.5547 7.99632 29.5547 8.59133ZM30.1775 16.8082C29.9612 14.4137 29.3269 11.8595 24.6992 11.8595H6.30226C1.67455 11.8595 1.05464 14.4137 0.823977 16.8082L0.016652 25.6463C-0.0842637 26.7492 0.276149 27.8522 1.02581 28.6794C1.78988 29.5211 2.87112 30 4.02445 30H6.73475C9.07023 30 9.51714 28.6503 9.80547 27.7651L10.0938 26.8943C10.4254 25.893 10.5119 25.6463 11.8094 25.6463H19.1906C20.4881 25.6463 20.5314 25.7914 20.9062 26.8943L21.1945 27.7651C21.4829 28.6503 21.9298 30 24.2652 30H26.9756C28.1145 30 29.2101 29.5211 29.9742 28.6794C30.7239 27.8522 31.0843 26.7492 30.9833 25.6463L30.1775 16.8082ZM11.1765 19.8413H6.85153C6.26045 19.8413 5.77029 19.3479 5.77029 18.7529C5.77029 18.1579 6.26045 17.6645 6.85153 17.6645H11.1765C11.7676 17.6645 12.2577 18.1579 12.2577 18.7529C12.2577 19.3479 11.7676 19.8413 11.1765 19.8413ZM24.1514 19.8413H19.8264C19.2353 19.8413 18.7452 19.3479 18.7452 18.7529C18.7452 18.1579 19.2353 17.6645 19.8264 17.6645H24.1514C24.7424 17.6645 25.2326 18.1579 25.2326 18.7529C25.2326 19.3479 24.7424 19.8413 24.1514 19.8413Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="title-wrap">
+                    <div class="title">PRIV LOBBYS</div>
+                    <div class="subtitle">Through this section you can create a private lobby or join different lobbies according to your wishes.</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="top">
+                    <div class="search">
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="Lobi Adı" id="searchInput" />
+                            <div class="icon">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.5 8C6.433 8 8 6.433 8 4.5C8 2.567 6.433 1 4.5 1C2.567 1 1 2.567 1 4.5C1 6.433 2.567 8 4.5 8Z" stroke="#595959" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 9L7 7" stroke="#595959" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="create-btn" id="openCreate">Create Lobby</div>
+                </div>
+                <div class="lobbies-wrapper"></div>
+            </div>
+        </div>
+        <div class="create-lobby">
+            <div class="header">
+                <div class="icon">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 14.5C18.5056 14.5 21.75 11.2556 21.75 7.25C21.75 3.24437 18.5056 0 14.5 0C10.4944 0 7.25 3.24437 7.25 7.25C7.25 11.2556 10.4944 14.5 14.5 14.5ZM14.5 18.125C9.66063 18.125 0 20.5538 0 25.375V27.1875C0 28.1844 0.815625 29 1.8125 29H27.1875C28.1844 29 29 28.1844 29 27.1875V25.375C29 20.5538 19.3394 18.125 14.5 18.125Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="title-wrap">
+                    <div class="title">Create Lobby</div>
+                    <div class="subtitle">Make your adjustments and create your private lobby where you can play with all players or with your friends.</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="inputs">
+                    <div class="input-wrapper">
+                        <div class="title">Lobby Name</div>
+                        <input type="text" placeholder="Lobby Name" id="lobbyName" />
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="title">Lobby Password</div>
+                        <input type="password" placeholder="Lobby Password" id="lobbyPassword" />
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="title">Player Limit (2 - 20)</div>
+                        <input type="number" placeholder="Player Limit (2 - 20)" id="lobbyLimit" />
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="title">Damage Type</div>
+                        <div class="dropdown" id="damageType">
+                            <div class="select">
+                                <span>Select</span>
+                                <img src="assets/arrow.png" >
+                            </div>
+                            <input type="number" hidden />
+                            <ul class="dropdown-menu">
+                                <li>Custom Damages</li>
+                                <li>Default Damages</li>
+                            </ul>
+                        </div>   
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="title">Oyun Modu</div>
+                        <div class="dropdown" id="gameMode">
+                            <div class="select">
+                                <span>Select</span>
+                                <img src="assets/arrow.png" >
+                            </div>
+                            <input type="number" hidden />
+                            <ul class="dropdown-menu">
+                                <li>Only Pistol</li>
+                                <li>Only SMG</li>
+                                <li>Only Rifle</li>
+                            </ul>
+                        </div>   
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="title">Harita</div>
+                        <div class="dropdown" id="lobbyMap">
+                            <div class="select">
+                                <span>Select</span>
+                                <img src="assets/arrow.png" >
+                            </div>
+                            <input type="number" hidden />
+                            <ul class="dropdown-menu" id="maps">
+                                
+                            </ul>
+                        </div>   
+                    </div>
+                </div>
+                <div class="create-btn" id="create-lobby">CREATE</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

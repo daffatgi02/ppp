@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Istok+Web:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin-left: 0.35vw;
+    margin-top: 0.55vw;
+    opacity: 0.85;
+    max-width: 2vw;
+    font-family: "Istok Web", sans-serif;
+}
+
+body {
+  background-size: cover;
+}
+
+main {
+  background-size: cover;
+}
+
+.logo {
+  display: none;
+}
+
+.general-text {
+  display: none;
+  position: absolute;
+  max-width: 50vw;
+  left: 0.9vw;
+  bottom: 10.2vw;
+  color: rgb(255, 255, 255);
+  font-family: "Istok Web", sans-serif;
+  font-size: 0.8vw;
+  filter: drop-shadow(0 0 0.95rem rgb(0, 0, 0));
+  opacity: 100%;
+}
+
+.discord-text {
+  display: none;
+  position: absolute;
+  max-width: 50vw;
+  left: 3.0vw;
+  top: 1.2vw;
+  color: rgb(255, 255, 255);
+  font-family: "Istok Web", sans-serif;
+  font-size: 1.2vw;
+  filter: drop-shadow(0 0 1.95rem rgb(0, 0, 0));
+  opacity: 100%;
+}

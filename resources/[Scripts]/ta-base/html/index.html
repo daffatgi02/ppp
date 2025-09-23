@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="gungame-finish">
+        <div class="title">WINNER</div>
+        <div class="content">
+            <div class="pp"><img src=""></div>
+            <div class="name"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="back">
+            <div class="buttons-wrapper">
+                <div class="button" onclick="back()">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="buttons-wrapper">
+                <div class="button" onclick="change_page('help-menu')">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20.3333H10.0133M4.95605 5.26252C5.67671 3.17004 7.6628 1.66666 10 1.66666C12.9455 1.66666 15.3333 4.05448 15.3333 7C15.3333 9.20866 13.9908 11.1037 12.0773 11.9136C11.0896 12.3317 10.5957 12.5408 10.4229 12.7023C10.2172 12.8945 10.1781 12.9535 10.0813 13.2179C10 13.4399 10 13.7821 10 14.4667V16.3333" stroke="#202020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="button" id="crewMenu">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.8943 13.7206C20.2957 14.4721 21.0823 15.7129 20.9456 16.9871C20.8767 17.7711 20.9117 17.7711 19.8516 17.9017C19.2017 17.9676 15.0653 18 10.8599 18C6.07353 18 1.08153 17.9676 0.706279 17.8693C-0.695157 17.5098 0.125356 15.0272 1.97096 13.8512C3.44132 12.969 6.41595 11.5976 7.23647 11.4334C8.3644 11.2045 8.50115 10.5188 7.23647 8.46063C6.96296 7.97038 6.65554 6.56551 6.62054 5.06342C6.58662 2.64565 7.03079 1.01289 9.25274 0.196515C9.663 0.0658534 10.1422 0 10.5863 0C12.0567 0 13.4242 0.783973 14.0051 1.92753C14.7917 3.46307 14.4154 7.48118 13.5949 8.95087C12.6037 10.6171 12.7055 11.1397 13.8006 11.401C14.4843 11.5641 16.7413 12.577 18.8943 13.7206ZM26.3818 11.6624C27.4758 12.2174 28.0917 13.2303 27.9889 14.2108C27.955 14.7993 27.955 14.8317 27.1344 14.93C26.7242 14.9958 24.5701 15.0282 22.0407 15.0282C21.5965 14.0153 20.741 13.1007 19.5792 12.5132C18.2456 11.7941 16.6735 11.0436 15.4766 10.5533C16.2632 10.1937 16.947 9.9 17.2544 9.83415C18.1088 9.63763 18.2116 9.18084 17.2544 7.54704C17.0148 7.15505 16.7413 6.0439 16.7074 4.86794C16.6735 2.97282 17.1176 1.6662 18.8276 1.04634C19.17 0.948084 19.5453 0.883275 19.8877 0.883275C21.0156 0.883275 22.0757 1.47178 22.5199 2.38641C23.1008 3.59477 22.8273 6.73066 22.2125 7.90662C21.4598 9.21324 21.5287 9.60523 22.3831 9.80174C22.9301 9.9324 24.674 10.7488 26.3829 11.6634L26.3818 11.6624Z" fill="#202020"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="button" onclick="change_page('market')">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.1216 5.21197H6.55121C6.4527 5.21197 6.3665 5.17872 6.29261 5.11222C6.21873 5.04572 6.17357 4.96259 6.15715 4.86284L5.36904 0.773067C5.3362 0.540316 5.23769 0.353283 5.07349 0.21197C4.9093 0.0706567 4.71228 0 4.48241 0H0.88663C0.640344 0 0.431001 0.0872818 0.2586 0.261845C0.0862002 0.436409 0 0.648379 0 0.897756V1.02244C0 1.27182 0.0862002 1.48795 0.2586 1.67082C0.431001 1.8537 0.640344 1.94514 0.88663 1.94514H3.39875C3.46443 1.94514 3.52189 1.96592 3.57115 2.00748C3.62041 2.04904 3.65324 2.10308 3.66966 2.16958L6.18178 15.7357C6.23104 16.0515 6.39523 16.2843 6.67435 16.4339C6.80571 16.517 6.95348 16.5586 7.11767 16.5586H7.53636C7.17514 16.9742 7.00274 17.4605 7.01916 18.0175C7.03557 18.5744 7.24081 19.0441 7.63487 19.4264C8.02893 19.8088 8.50098 20 9.05102 20C9.60106 20 10.0772 19.8088 10.4795 19.4264C10.8817 19.0441 11.0911 18.5744 11.1075 18.0175C11.1239 17.4605 10.9433 16.9742 10.5657 16.5586H15.1466C14.769 16.9742 14.5925 17.4605 14.6171 18.0175C14.6417 18.5744 14.8511 19.0441 15.2451 19.4264C15.6392 19.8088 16.1112 20 16.6613 20C17.2113 20 17.6833 19.8088 18.0774 19.4264C18.4715 19.0441 18.6767 18.5744 18.6931 18.0175C18.7095 17.4605 18.5371 16.9742 18.1759 16.5586H18.5946C18.8409 16.5586 19.0502 16.4713 19.2226 16.2968C19.395 16.1222 19.4812 15.9102 19.4812 15.6608V15.4613C19.4812 15.212 19.3909 15 19.2103 14.8254C19.0297 14.6509 18.8163 14.5636 18.57 14.5636H8.25059C8.15207 14.5636 8.06587 14.5303 7.99199 14.4638C7.9181 14.3973 7.87295 14.3225 7.85653 14.2394L7.61024 12.8928C7.59382 12.7598 7.62666 12.6434 7.70876 12.5436C7.79085 12.4439 7.88937 12.4023 8.0043 12.419H19.3335C19.5469 12.419 19.7316 12.3525 19.8876 12.2195C20.0436 12.0865 20.138 11.9119 20.1708 11.6958L20.9836 6.23441C21.0328 5.96841 20.9713 5.7315 20.7989 5.52369C20.6265 5.31588 20.4007 5.21197 20.1216 5.21197Z" fill="#202020"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="button" onclick="change_page('leaderboard')">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg width="26" height="17" viewBox="0 0 26 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.25806 7.15789C0.563261 7.15789 0 7.7588 0 8.5C0 9.2412 0.563261 9.8421 1.25806 9.8421V7.15789ZM24.7419 9.8421C25.4367 9.8421 26 9.2412 26 8.5C26 7.7588 25.4367 7.15789 24.7419 7.15789V9.8421ZM1.25806 0C0.563261 0 0 0.600887 0 1.34211C0 2.08332 0.563261 2.68421 1.25806 2.68421V0ZM16.9134 2.68421C17.6082 2.68421 18.1715 2.08332 18.1715 1.34211C18.1715 0.600887 17.6082 0 16.9134 0V2.68421ZM1.25806 14.3158C0.563261 14.3158 0 14.9167 0 15.6579C0 16.3991 0.563261 17 1.25806 17V14.3158ZM16.9134 17C17.6082 17 18.1715 16.3991 18.1715 15.6579C18.1715 14.9167 17.6082 14.3158 16.9134 14.3158V17ZM1.25806 9.8421H24.7419V7.15789H1.25806V9.8421ZM1.25806 2.68421H16.9134V0H1.25806V2.68421ZM1.25806 17H16.9134V14.3158H1.25806V17Z" fill="#202020"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="button" onclick="change_page('settings')">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5129 0.0767305C13.25 1.42803e-08 12.9524 0 12.3571 0C11.7617 0 11.4641 1.42803e-08 11.2012 0.0767305C10.8163 0.189034 10.4763 0.419213 10.229 0.734862C10.0601 0.950513 9.94959 1.22687 9.72855 1.77959C9.41074 2.57411 8.52874 2.98324 7.71689 2.71272L6.98756 2.4697C6.4702 2.29725 6.21152 2.21101 5.95789 2.19624C5.58533 2.17453 5.21453 2.26207 4.89101 2.44809C4.67077 2.57473 4.47797 2.76755 4.09235 3.15317C3.6825 3.56302 3.47757 3.76794 3.34739 4.00186C3.15612 4.34552 3.07521 4.73971 3.11564 5.13093C3.14315 5.3972 3.25078 5.66629 3.46605 6.20445C3.80316 7.04724 3.47885 8.0101 2.70053 8.4772L2.34593 8.69C1.80301 9.01574 1.53154 9.17866 1.33436 9.40291C1.15986 9.60135 1.02829 9.83377 0.947893 10.0855C0.857056 10.3699 0.857056 10.6896 0.857056 11.3292C0.857056 12.0864 0.857056 12.4648 0.977959 12.789C1.08479 13.0754 1.25856 13.3319 1.48475 13.5375C1.74074 13.7701 2.08877 13.9094 2.78479 14.1878C3.4961 14.4722 3.86234 15.2619 3.62007 15.9887L3.34516 16.8135C3.15474 17.3847 3.05952 17.6704 3.05087 17.951C3.04046 18.2884 3.11935 18.6226 3.27956 18.9197C3.4128 19.1669 3.62572 19.3798 4.0515 19.8055C4.47729 20.2313 4.6902 20.4442 4.93732 20.5775C5.23447 20.7377 5.56864 20.8167 5.90606 20.8062C6.18669 20.7975 6.47232 20.7023 7.04359 20.5119L7.71696 20.2874C8.52874 20.0169 9.41075 20.4259 9.72855 21.2204C9.94959 21.7731 10.0601 22.0495 10.229 22.2651C10.4763 22.5808 10.8163 22.811 11.2012 22.9233C11.4641 23 11.7617 23 12.3571 23C12.9524 23 13.25 23 13.5129 22.9233C13.8978 22.811 14.2378 22.5808 14.4851 22.2651C14.654 22.0495 14.7645 21.7731 14.9856 21.2204C15.3034 20.4259 16.1854 20.0169 16.997 20.2877L17.6699 20.512C18.2412 20.7024 18.5269 20.7976 18.8075 20.8063C19.145 20.8167 19.4791 20.7378 19.7762 20.5776C20.0233 20.4443 20.2363 20.2314 20.6621 19.8057C21.0878 19.3799 21.3007 19.1669 21.434 18.9198C21.5942 18.6227 21.6731 18.2884 21.6627 17.9511C21.654 17.6705 21.5588 17.3848 21.3684 16.8135L21.0937 15.9893C20.8513 15.2623 21.2177 14.4724 21.9293 14.1878C22.6253 13.9094 22.9733 13.7701 23.2294 13.5375C23.4556 13.3319 23.6293 13.0754 23.7362 12.789C23.857 12.4648 23.857 12.0864 23.857 11.3292C23.857 10.6896 23.857 10.3699 23.7662 10.0855C23.6858 9.83377 23.5542 9.60135 23.3798 9.40291C23.1825 9.17866 22.9111 9.01574 22.3682 8.69L22.0131 8.47698C21.2348 8.00996 20.9104 7.04712 21.2476 6.20435C21.4627 5.66621 21.5705 5.39711 21.5979 5.13083C21.6383 4.73961 21.5574 4.34543 21.3661 4.00176C21.2359 3.76785 21.0311 3.56292 20.6212 3.15307C20.2356 2.76746 20.0428 2.57464 19.8226 2.448C19.4991 2.26197 19.1283 2.17444 18.7556 2.19614C18.502 2.21093 18.2434 2.29715 17.726 2.4696L16.9972 2.71256C16.1854 2.98315 15.3034 2.57408 14.9856 1.77959C14.7645 1.22687 14.654 0.950513 14.4851 0.734862C14.2378 0.419213 13.8978 0.189034 13.5129 0.0767305Z" fill="#202020"/>
+                                <path d="M16.4642 11.5C16.4642 13.7684 14.6254 15.6071 12.357 15.6071C10.0886 15.6071 8.24988 13.7684 8.24988 11.5C8.24988 9.23162 10.0886 7.39285 12.357 7.39285C14.6254 7.39285 16.4642 9.23162 16.4642 11.5Z" fill="#202020" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selections">
+                <div class="row-l">
+                    <div class="col-l" onclick="change_page('gamemods_page')">
+                        <div class="bg-img">
+                            <img src="images/bg-1.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">GAME MODES</div>
+                            <div class="subtitle">Many game modes in different damage categories await you...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-l">
+                    <div class="col-m" id="privlobbys">
+                        <div class="bg-img">
+                            <img src="images/bg-2.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">SPECIAL LOBBIES</div>
+                            <div class="subtitle">If you're tired of classic and community game modes, create your own private lobby and keep having fun.</div>
+                        </div>
+                    </div>
+                    <div class="col-s" id="matchmaking" onclick="change_page('reko_page')">
+                        <div class="bg-img">
+                            <img src="images/bg-3.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">COMPETITIVE</div>
+                            <div class="subtitle">What about entering <b>1V1</b>, <b>2V2</b>, <b>3V3</b>, <b>4V4</b> and <b>5V5</b> fights.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-s">
+                    
+                    <div class="col-l game" id="farm_and_fight" data-max="200" onclick="join_game('farm_and_fight')">
+                        <div class="bg-img">
+                            <img src="images/bg-4.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">FREE LOBBY</div>
+                            <div class="subtitle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right3" style="display: none;">
+            <div class="leaderboard" style="display: none;">
+                <div class="header">
+                    <div class="icon">
+                        <svg width="40" height="27" viewBox="0 0 40 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.93548 11.3684C0.866555 11.3684 0 12.3228 0 13.5C0 14.6772 0.866555 15.6316 1.93548 15.6316V11.3684ZM38.0645 15.6316C39.1334 15.6316 40 14.6772 40 13.5C40 12.3228 39.1334 11.3684 38.0645 11.3684V15.6316ZM1.93548 0C0.866555 0 0 0.954351 0 2.13158C0 3.30881 0.866555 4.26316 1.93548 4.26316V0ZM26.0206 4.26316C27.0895 4.26316 27.9561 3.30881 27.9561 2.13158C27.9561 0.954351 27.0895 0 26.0206 0V4.26316ZM1.93548 22.7368C0.866555 22.7368 0 23.6912 0 24.8684C0 26.0456 0.866555 27 1.93548 27V22.7368ZM26.0206 27C27.0895 27 27.9561 26.0456 27.9561 24.8684C27.9561 23.6912 27.0895 22.7368 26.0206 22.7368V27ZM1.93548 15.6316H38.0645V11.3684H1.93548V15.6316ZM1.93548 4.26316H26.0206V0H1.93548V4.26316ZM1.93548 27H26.0206V22.7368H1.93548V27Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="title-wrapper">
+                        <div class="title">LEADER TABLE</div>
+                        <div class="subtitle">Through this section you can view players' stats and check their rankings.</div>
+                    </div>
+                </div>
+                
+                <div class="select">
+                    <div class="title">Select Sort Mode</div>
+                    <select class="dropdown leaderSelection">
+                        <option value="0">Player (Normal)</option>
+                        <option value="1">Player (Competitive)</option>
+                    </select>
+                </div>
+
+                <div class="table">
+                    <div class="head">
+                        <div class="rank">RANK</div>
+                        <div class="name">NAME</div>
+                        <div class="kill">KILLS</div>
+                        <div class="death">DEATHS</div>
+                        <div class="kda">KDA</div>
+                    </div>
+                    <div class="body"></div>
+                    <div class="self"></div>
+                </div>
+            </div>
+
+            <div class="help-menu" style="display: none;">
+                <div class="header">
+                    <div class="icon">
+                        <svg width="20" height="33" viewBox="0 0 20 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.99952 30.4999H10.0195M2.43359 7.89377C3.51458 4.75505 6.49372 2.49998 9.99952 2.49998C14.4178 2.49998 17.9995 6.08172 17.9995 10.5C17.9995 13.813 15.9857 16.6555 13.1155 17.8704C11.6339 18.4975 10.8931 18.8112 10.6339 19.0534C10.3253 19.3417 10.2667 19.4302 10.1215 19.8268C9.99952 20.1598 9.99952 20.6731 9.99952 21.7V24.4999" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="title-wrapper">
+                        <div class="title">HELP MENU</div>
+                        <div class="subtitle">You can find a lot of information about server systems on this page.</div>
+                    </div>
+                </div>
+
+                <div class="help-boxes">
+                    <div class="box">
+                        <div class="title">I have a problem with the main menu, how can I solve it?</div>
+                        <div class="desc">If you have any problems with the main menu, you can fix it with the <bold>/menufix</bold> command.</div>
+                    </div>
+                    <div class="box">
+                        <div class="title">How do I set up a Squad?</div>
+                        <div class="desc">The <bold>Squad</bold> system is only available in <bold>Free Lobby</bold> mode. After logging into the mode, you can create a squad with the <bold>/squad</bold> command. After creating your squad, you can send invitations to your friends with <bold>/invite id</bold>.</div>
+                    </div>
+                    <div class="box">
+                        <div class="title">How can I customize a character?</div>
+                        <div class="desc">First, log in to the <bold>Settings</bold> page. Then scroll down to the bottom and click on the <bold>Costume Settings</bold> button and customize your character as you wish.</div>
+                    </div>
+                    <div class="box">
+                        <div class="title">How do claims work?</div>
+                        <div class="desc">The game mods in the <bold>Default Damaged Mods</bold> category are built with GTA's default damage, colloquially known as head damage. Game mods in the <bold>Custom Damaged Mods</bold> category are created with fully customized damage, colloquially known as body damage.</div>
+                    </div>
+                    <div class="box">
+                        <div class="title">How do I get all the indicators back?</div>
+                        <div class="desc">If you are not satisfied with the settings adjustments you have made, you can reset all your settings via the <bold>Reset</bold> button at the top by entering the Settings page.</div>
+                    </div>
+                    <div class="box">
+                        <div class="title">How can I trick in deluxo mode?</div>
+                        <div class="desc">After exiting the Safe Zone, you can trick via the <bold>B</bold> key.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings" style="display: none;">
+                <div class="header">
+                    <div class="icon">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.3153 0.111043C17.9348 2.06661e-08 17.5041 0 16.6426 0C15.781 0 15.3504 2.06661e-08 14.9698 0.111043C14.4128 0.273567 13.9208 0.606677 13.563 1.06348C13.3185 1.37556 13.1585 1.7755 12.8387 2.57538C12.3787 3.7252 11.1023 4.31729 9.92743 3.9258L8.87195 3.5741C8.12324 3.32454 7.74888 3.19974 7.38183 3.17836C6.84267 3.14694 6.30606 3.27363 5.83786 3.54283C5.51914 3.72611 5.24012 4.00515 4.68206 4.56321C4.08893 5.15633 3.79236 5.45288 3.60397 5.79141C3.32716 6.28875 3.21008 6.85922 3.26858 7.42538C3.3084 7.81073 3.46415 8.20015 3.77568 8.97896C4.26355 10.1986 3.79421 11.5921 2.66784 12.268L2.15468 12.576C1.36896 13.0474 0.976105 13.2832 0.690741 13.6077C0.438217 13.8949 0.247808 14.2312 0.131458 14.5955C-2.75549e-08 15.0072 0 15.4698 0 16.3953C0 17.4912 -1.37774e-08 18.0389 0.174969 18.508C0.329578 18.9224 0.581048 19.2937 0.908389 19.5913C1.27885 19.9278 1.78251 20.1294 2.78978 20.5323C3.81917 20.9439 4.34919 22.0867 3.99858 23.1385L3.60073 24.3322C3.32517 25.1588 3.18737 25.5722 3.17485 25.9783C3.15978 26.4667 3.27395 26.9502 3.5058 27.3802C3.69863 27.738 4.00676 28.0461 4.62294 28.6622C5.23914 29.2784 5.54725 29.5864 5.90488 29.7793C6.3349 30.0112 6.81852 30.1255 7.30683 30.1103C7.71295 30.0977 8.12631 29.96 8.95304 29.6844L9.92752 29.3595C11.1023 28.9681 12.3787 29.56 12.8387 30.7098C13.1585 31.5096 13.3185 31.9095 13.563 32.2217C13.9208 32.6784 14.4128 33.0117 14.9698 33.1742C15.3504 33.2852 15.781 33.2851 16.6426 33.2851C17.5041 33.2851 17.9348 33.2852 18.3153 33.1742C18.8723 33.0117 19.3644 32.6784 19.7222 32.2217C19.9667 31.9095 20.1266 31.5096 20.4465 30.7098C20.9064 29.56 22.1829 28.9681 23.3575 29.3599L24.3313 29.6846C25.158 29.9601 25.5715 30.0979 25.9776 30.1105C26.4659 30.1255 26.9495 30.0114 27.3794 29.7795C27.7371 29.5866 28.0453 29.2785 28.6615 28.6624C29.2776 28.0463 29.5857 27.738 29.7786 27.3804C30.0104 26.9504 30.1245 26.4667 30.1096 25.9785C30.097 25.5724 29.9592 25.1589 29.6837 24.3322L29.2861 23.1395C28.9353 22.0873 29.4655 20.9441 30.4953 20.5323C31.5025 20.1294 32.0063 19.9278 32.3768 19.5913C32.7041 19.2937 32.9556 18.9224 33.1102 18.508C33.2851 18.0389 33.2851 17.4912 33.2851 16.3953C33.2851 15.4698 33.2851 15.0072 33.1537 14.5955C33.0374 14.2312 32.8469 13.8949 32.5945 13.6077C32.309 13.2832 31.9162 13.0474 31.1305 12.576L30.6166 12.2677C29.4903 11.5919 29.0208 10.1985 29.5088 8.97882C29.8202 8.20004 29.9761 7.8106 30.0158 7.42523C30.0742 6.85907 29.9572 6.28862 29.6804 5.79127C29.4919 5.45276 29.1955 5.15618 28.6023 4.56306C28.0442 4.00502 27.7652 3.72598 27.4466 3.54271C26.9784 3.27348 26.4417 3.14681 25.9025 3.17821C25.5354 3.19961 25.1612 3.32439 24.4124 3.57396L23.3577 3.92556C22.1829 4.31716 20.9064 3.72516 20.4465 2.57538C20.1266 1.7755 19.9667 1.37556 19.7222 1.06348C19.3644 0.606677 18.8723 0.273567 18.3153 0.111043Z" fill="white"/>
+                            <path d="M22.5858 16.6426C22.5858 19.9253 19.9248 22.5863 16.642 22.5863C13.3593 22.5863 10.6982 19.9253 10.6982 16.6426C10.6982 13.3598 13.3593 10.6988 16.642 10.6988C19.9248 10.6988 22.5858 13.3598 22.5858 16.6426Z" fill="#29292A" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="title-wrapper">
+                        <div class="title">SETTINGS</div>
+                        <div class="subtitle">Through this section you can create a private room according to your own wishes.</div>
+                    </div>
+                </div>
+
+                <div class="select">
+                    <div class="title">Reset Settings</div>
+                    <div class="reset-btn btn">Reset</div>
+                </div>
+
+                <div class="settings-wrapper">
+                    <div class="setting">
+                        <div class="title">Killfeed</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can turn Killfeed off and on.</div>
+                            <div class="btn-wrap">
+                                <button onclick="startEditing('killfeed')" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-killfeed">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Killed Message</div>
+                        <div class="content">
+                            <div class="subtitle">You can turn the Killed Message notification off and on through this section.</div>
+                            <div class="btn-wrap">
+                                <button onclick="startEditing('killed_message')" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-killed">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Hitsound</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can turn Hitsound off and on.</div>
+                            <div class="slider-button">
+                                <label class="switch">
+                                    <input type="checkbox" checked id="show-hitsound">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Damage Message</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can turn the Damage Message notification off and on.</div>
+                            <div class="btn-wrap">
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-damage">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Death Screen</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can turn Death Screen off and on.</div>
+                            <div class="btn-wrap">
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-deathscreen">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Hud</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can move your hud to various parts of the screen.</div>
+                            <div class="btn-wrap">
+                                <button onclick="startEditing('hud')" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-hud">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Crosshair</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can customize the Crosshair.</div>
+                            <div class="btn-wrap">
+                                <button onclick="crosshairSelect()" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                                <div class="slider-button">
+                                    <label class="switch">
+                                        <input type="checkbox" checked id="show-crosshair">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="title">Clothing Settings</div>
+                        <div class="content">
+                            <div class="subtitle">Through this section you can customize the character appearance and change character clothing.</div>
+                            <div class="btn-wrap">
+                                <button onclick="kiyafetbaba()" class="clothing-button" role="button"><i class="fas fa-cog" style="font-size: 15px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right2" style="display: none;">
+            <div class="gamemodes">
+                <div class="row-l">
+                    <div class="col-m" onclick="change_page('default_damaged')">
+                        <div class="bg-img">
+                            <img src="images/bg-6.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">DEFAULT DAMAGED MODS</div>
+                            <div class="subtitle">Damage from all game mods included in this category is the default damage in GTA 5.</div>
+                        </div>
+                    </div>
+                    <div class="col-m" onclick="change_page('advanced_mods')">
+                        <div class="bg-img">
+                            <img src="images/bg-9.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">ADVANCED MODS</div>
+                            <div class="subtitle">All game modes included in this category are created for fun rather than purpose.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-l">
+                    <div class="col-m" onclick="change_page('custom_damaged')">
+                        <div class="bg-img">
+                            <img src="images/bg-7.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">CUSTOM DAMAGED MODS</div>
+                            <div class="subtitle">All game modes included in this category have customized damage.</div>
+                        </div>
+                    </div>
+                    <div class="col-m deactive" onclick="aimlab()">
+                        <div class="bg-img">
+                            <img src="images/bg-8.png" />
+                        </div>
+
+                        <div class="title-wrapper">
+                            <div class="title">AIM LAB</div>
+                            <div class="subtitle">It wouldn't hurt to do a little training before the conflict...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="animator">
+                <div class="stat" id="kda">
+                    <div class="top">
+                        <div class="title">KD</div>
+                        <div class="icon">
+                            <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.848181 1.79359H1.11524V0.82034C1.11524 0.368005 1.49574 0 1.96342 0H21.9771C22.4166 0 22.848 0.32212 22.9593 0.73322L22.9723 0.781237H24.1518C24.6195 0.781237 25 1.14924 25 1.60158V4.43443C25 4.8767 24.636 5.23738 24.1827 5.25324L24.537 6.56206C24.5969 6.78339 24.555 7.0057 24.4223 7.17206C24.2895 7.33843 24.0777 7.43381 23.8412 7.43381H21.7911L24.9273 16.835C25.025 17.1279 24.9858 17.4227 24.8197 17.6436C24.6535 17.8646 24.3756 17.9915 24.0573 17.9918L15.4729 18H15.4718C15.167 18 14.8799 17.8847 14.6633 17.6753C14.4468 17.4658 14.3275 17.1881 14.3275 16.8933V14.9499C14.3275 14.3392 14.8412 13.8424 15.4726 13.8424H15.9957C16.1239 13.8424 16.2242 13.8029 16.2781 13.7313C16.3321 13.6596 16.3401 13.5551 16.3006 13.4372L15.8469 12.0788H11.0586C10.3576 12.0788 9.64307 11.629 9.35939 11.0093L7.72217 7.43381H1.96342C1.49574 7.43381 1.11524 7.0658 1.11524 6.61347V5.25471H0.848181C0.380495 5.25471 0 4.88671 0 4.43437V2.61388C0 2.16159 0.380438 1.79359 0.848181 1.79359ZM11.1372 10.1647H13.3271C12.6901 9.84522 12.2809 9.31649 12.2809 8.7067C12.2809 8.20312 12.5599 7.75478 13.0157 7.43386H9.88673L11.1372 10.1647ZM8.99145 3.52418C8.99145 3.82497 9.2459 4.07107 9.5569 4.07107H18.3954C18.7064 4.07107 18.9608 3.82497 18.9608 3.52418V1.85944C18.9608 1.55865 18.7064 1.31254 18.3954 1.31254H9.5569C9.2459 1.31254 8.99145 1.55865 8.99145 1.85944V3.52418Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+                    <div class="content" id="kdas">2.81</div>
+                    <div class="arrow">
+                        <svg width="170" height="272" viewBox="0 0 170 272" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle opacity="0.5" cx="154.026" cy="256.026" r="8" transform="rotate(-120 154.026 256.026)" fill="white"/>
+                            <circle opacity="0.8" cx="154.026" cy="256.026" r="10.5" transform="rotate(-120 154.026 256.026)" stroke="white"/>
+                            <path d="M135.903 240.449L1.24241 111.411L1.24248 3.74806e-06" stroke="white"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stat" id="rank">
+                    <div class="top">
+                        <div class="title">Rank</div>
+                        <div class="icon">
+                            <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.848181 1.79359H1.11524V0.82034C1.11524 0.368005 1.49574 0 1.96342 0H21.9771C22.4166 0 22.848 0.32212 22.9593 0.73322L22.9723 0.781237H24.1518C24.6195 0.781237 25 1.14924 25 1.60158V4.43443C25 4.8767 24.636 5.23738 24.1827 5.25324L24.537 6.56206C24.5969 6.78339 24.555 7.0057 24.4223 7.17206C24.2895 7.33843 24.0777 7.43381 23.8412 7.43381H21.7911L24.9273 16.835C25.025 17.1279 24.9858 17.4227 24.8197 17.6436C24.6535 17.8646 24.3756 17.9915 24.0573 17.9918L15.4729 18H15.4718C15.167 18 14.8799 17.8847 14.6633 17.6753C14.4468 17.4658 14.3275 17.1881 14.3275 16.8933V14.9499C14.3275 14.3392 14.8412 13.8424 15.4726 13.8424H15.9957C16.1239 13.8424 16.2242 13.8029 16.2781 13.7313C16.3321 13.6596 16.3401 13.5551 16.3006 13.4372L15.8469 12.0788H11.0586C10.3576 12.0788 9.64307 11.629 9.35939 11.0093L7.72217 7.43381H1.96342C1.49574 7.43381 1.11524 7.0658 1.11524 6.61347V5.25471H0.848181C0.380495 5.25471 0 4.88671 0 4.43437V2.61388C0 2.16159 0.380438 1.79359 0.848181 1.79359ZM11.1372 10.1647H13.3271C12.6901 9.84522 12.2809 9.31649 12.2809 8.7067C12.2809 8.20312 12.5599 7.75478 13.0157 7.43386H9.88673L11.1372 10.1647ZM8.99145 3.52418C8.99145 3.82497 9.2459 4.07107 9.5569 4.07107H18.3954C18.7064 4.07107 18.9608 3.82497 18.9608 3.52418V1.85944C18.9608 1.55865 18.7064 1.31254 18.3954 1.31254H9.5569C9.2459 1.31254 8.99145 1.55865 8.99145 1.85944V3.52418Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+                    <div class="content" id="ranks">2.81</div>
+                    <div class="arrow">
+                        <svg width="170" height="272" viewBox="0 0 170 272" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle opacity="0.5" cx="154.026" cy="256.026" r="8" transform="rotate(-120 154.026 256.026)" fill="white"/>
+                            <circle opacity="0.8" cx="154.026" cy="256.026" r="10.5" transform="rotate(-120 154.026 256.026)" stroke="white"/>
+                            <path d="M135.903 240.449L1.24241 111.411L1.24248 3.74806e-06" stroke="white"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stat" id="death">
+                    <div class="top">
+                        <div class="title">Deaths</div>
+                        <div class="icon">
+                            <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.85681 -3.05176e-05H7.14314C3.19806 -3.05176e-05 0 3.22359 0 7.20027V18H15V7.20027C15 3.22359 11.802 -3.05176e-05 7.85681 -3.05176e-05ZM11.2202 10.1781H8.46753V14.5131H6.53247V10.1781H3.77981V8.22084H6.53247V5.51266H8.46753V8.22084H11.2202V10.1781Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+                    <div class="content" id="deaths">762</div>
+                    <div class="arrow">
+                        <svg width="123" height="407" viewBox="0 0 123 407" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle opacity="0.5" cx="11" cy="396" r="8" fill="white"/>
+                            <circle opacity="0.8" cx="11" cy="396" r="10.5" stroke="white"/>
+                            <path d="M13.5 369.5L26.5 96.5L122 1" stroke="white"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stat" id="kill">
+                    <div class="top">
+                        <div class="title">Kills</div>
+                        <div class="icon">
+                            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.45 17.1429C14.45 17.6163 14.0695 18 13.6 18H10.2H6.8H3.4C2.93055 18 2.55 17.6163 2.55 17.1429V15.2143C2.55 14.3859 1.88403 13.7143 1.0625 13.7143C0.475694 13.7143 0 13.2346 0 12.6429V8.57143C0 3.83756 3.80558 0 8.5 0C13.1944 0 17 3.83756 17 8.57143V12.6429C17 13.2346 16.5243 13.7143 15.9375 13.7143C15.116 13.7143 14.45 14.3859 14.45 15.2143V17.1429ZM12.75 16.2857V15.2143C12.75 13.6593 13.8451 12.3621 15.3 12.0643V8.57143C15.3 4.78433 12.2556 1.71429 8.5 1.71429C4.74446 1.71429 1.7 4.78433 1.7 8.57143V12.0643C3.15493 12.3621 4.25 13.6593 4.25 15.2143V16.2857H5.95V14.5714C5.95 14.098 6.33055 13.7143 6.8 13.7143C7.26945 13.7143 7.65 14.098 7.65 14.5714V16.2857H9.35V14.5714C9.35 14.098 9.73055 13.7143 10.2 13.7143C10.6695 13.7143 11.05 14.098 11.05 14.5714V16.2857H12.75ZM7.65 9.85714C7.65 11.0406 5.63744 12 4.46461 12C3.38699 12 3.39325 11.19 3.40137 10.1405C3.40208 10.0479 3.40281 9.95323 3.40281 9.85714C3.40281 8.67369 4.35358 7.71429 5.52641 7.71429C6.69923 7.71429 7.65 8.67369 7.65 9.85714ZM13.5986 10.1405C13.5979 10.0478 13.5972 9.95323 13.5972 9.85714C13.5972 8.67369 12.6464 7.71429 11.4736 7.71429C10.3007 7.71429 9.35 8.67369 9.35 9.85714C9.35 11.0406 11.3625 12 12.5354 12C13.613 12 13.6067 11.19 13.5986 10.1405Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+                    <div class="content" id="kills">2146</div>
+                    <div class="arrow">
+                        <svg width="114" height="344" viewBox="0 0 114 344" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle opacity="0.5" cx="11" cy="333" r="8" fill="white"/>
+                            <circle opacity="0.8" cx="11" cy="333" r="10.5" stroke="white"/>
+                            <path d="M23.0001 317.5L113 181.5L113 -9.65133e-06" stroke="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="character">
+            <div class="arrow">
+                <svg width="271" height="98" viewBox="0 0 271 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.5" cx="11" cy="87" r="8" fill="white"/>
+                    <circle opacity="0.8" cx="11" cy="87" r="10.5" stroke="white"/>
+                    <path d="M24 75.5L98.5 1H271" stroke="white"/>
+                </svg>
+            </div>
+
+            <div class="char">
+                <div class="pp">
+                    <img src="images/pp.png" >
+                </div>
+                <div class="title-wrapper">
+                    <div class="title">Name</div>
+                    <div class="subtitle">ViberR</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="default_damaged_mods game-mode">
+            <div class="mode-text">DEFAULT DAMAGED MODS</div>
+            <div class="game1 game" id="default_damaged_only_pistol" data-max="30">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY PISTOL (HS)</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game2 game" id="default_damaged_only_pistol_2" data-max="30">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY PISTOL (HS) #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game3 game" id="default_damaged_only_ap_pistol" data-max="30">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY AP (HS)</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game4 game deactive" id="default_damaged_only_ap_pistol_2" data-max="30" onclick="join_game('default_damaged_only_ap_pistol_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY AP (HS) #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game5 game" id="default_damaged_only_smg" data-max="30" onclick="join_game('default_damaged_only_smg')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY SMG</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game6 game" id="default_damaged_only_smg_2" data-max="30" onclick="join_game('default_damaged_only_smg_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY SMG #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game7 game" id="default_damaged_only_rifle" data-max="30" onclick="join_game('default_damaged_only_rifle')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY RIFLE</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game8 game" id="default_damaged_only_rifle_2" data-max="30" onclick="join_game('default_damaged_only_rifle_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY RIFLE #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom_damaged_mods game-mode">
+            <div class="mode-text">CUSTOM DAMAGED MODS</div>
+            <div class="game1 game" id="custom_damaged_only_pistol" data-max="30" onclick="join_game('custom_damaged_only_pistol')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY PISTOL</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game2 game" id="custom_damaged_only_pistol_2" data-max="30" onclick="join_game('custom_damaged_only_pistol_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY PISTOL #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game3 game" id="custom_damaged_only_smg" data-max="30" onclick="join_game('custom_damaged_only_smg')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY SMG</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game4 game" id="custom_damaged_only_rifle" data-max="30" onclick="join_game('custom_damaged_only_rifle')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY RIFLE</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game5 game" id="custom_damaged_only_shotgun" data-max="30" onclick="join_game('custom_damaged_only_shotgun')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY SHOTGUN</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game6 game" id="custom_damaged_only_revolver" data-max="30" onclick="join_game('custom_damaged_only_revolver')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">ONLY REVOLVER</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game7 game" id="custom_damaged_only_m60" data-max="20" onclick="join_game('custom_damaged_only_m60')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">M60 MAYHEM</div>
+                        <div class="title players-title"><span>0</span>/20</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+            <div class="game8 game" id="custom_damaged_only_m60_2" data-max="20" onclick="join_game('custom_damaged_only_m60_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">M60 MAYHEM #2</div>
+                        <div class="title players-title"><span>0</span>/20</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+            <div class="game9 game" id="custom_damaged_only_deluxo" data-max="50" onclick="join_game('custom_damaged_only_deluxo')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">DELUXO TRICK</div>
+                        <div class="title players-title"><span>0</span>/50</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+            <div class="game10 game deactive" id="advanced_snowball" data-max="20" onclick="join_game('advanced_snowball')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">SNOWBALL FIGHT</div>
+                        <div class="title players-title"><span>0</span>/20</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced_mods game-mode">
+            <div class="mode-text">ADVANCED MODS</div>
+            <div class="game1 game" id="advanced_gungame" data-max="30" onclick="join_game('advanced_gungame')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">GUNGAME</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game3.png"/>
+                </div>
+            </div>
+            <div class="game2 game deactive" id="advanced_gungame_3" data-max="30" onclick="join_game('advanced_gungame_3')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">GUNGAME #2</div>
+                        <div class="title players-title"><span>0</span>/30</div>
+                    </div>
+                    <img src="images/game3.png"/>
+                </div>
+            </div>
+            <div class="game3 game" id="advanced_gungame_2" data-max="40" onclick="join_game('advanced_gungame_2')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">DRIVE-BY FIGHT</div>
+                        <div class="title players-title"><span>0</span>/40</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+            <div class="game4 game deactive" id="advanced_gangwar" data-max="100" onclick="join_game('advanced_gangwar')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">GANGWAR</div>
+                        <div class="title players-title"><span>0</span>/100</div>
+                    </div>
+                    <img src="images/game2.png"/>
+                </div>
+            </div>
+            <div class="game5 game" id="advanced_sumo" data-max="20" onclick="join_game('advanced_sumo')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">SUMO</div>
+                        <div class="title players-title"><span>0</span>/20</div>
+                    </div>
+                    <img src="images/game5.png"/>
+                </div>
+            </div>
+            <div class="game6 game deactive" id="advanced_parkour" data-max="10" onclick="join_game('advanced_parkour')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">FACE TO FACE</div>
+                        <div class="title players-title"><span>0</span>/10</div>
+                    </div>
+                    <img src="images/game5.png"/>
+                </div>
+            </div>
+            <div class="game7 game deactive" id="custom_damaged_only_labirent" data-max="15" onclick="join_game('custom_damaged_only_labirent')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">LABIRENT FIGHT</div>
+                        <div class="title players-title"><span>0</span>/15</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+            <div class="game8 game deactive" id="advanced_knife" data-max="20" onclick="join_game('advanced_knife')">
+                <div class="kutu">
+                    <div class="title-wrapper">
+                        <div class="title">KNIFE FIGHT</div>
+                        <div class="title players-title"><span>0</span>/20</div>
+                    </div>
+                    <img src="images/game.png"/>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="facetoface">
+        <div class="title">LEADERBOARD</div>
+        <div class="users"></div>
+    </div>
+    
+    <div id="gungame-board">
+        <div id="current-weapon">
+            <p>
+            <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.525 2.09608H14.3755V1.50132C14.3755 1.22489 14.1624 1 13.9005 1H2.6928C2.44673 1 2.20512 1.19685 2.1428 1.44808L2.13552 1.47742H1.47498C1.21308 1.47742 1 1.70231 1 1.97874V3.70993C1 3.98021 1.20383 4.20062 1.45769 4.21031L1.25931 5.01015C1.22574 5.1454 1.24917 5.28126 1.32353 5.38293C1.39788 5.4846 1.51649 5.54288 1.64892 5.54288H2.79701L1.04072 11.2881C0.985972 11.4671 1.00798 11.6472 1.10098 11.7822C1.19401 11.9172 1.34968 11.9948 1.52793 11.995L6.33518 12H6.33578C6.50645 12 6.66725 11.9295 6.78853 11.8015C6.90981 11.6735 6.97659 11.5039 6.97659 11.3237V10.136C6.97659 9.76285 6.68891 9.45922 6.33533 9.45922H6.0424C5.97061 9.45922 5.91447 9.43509 5.88426 9.39134C5.85405 9.34752 5.84956 9.28369 5.87166 9.21163L6.12571 8.38152H8.8072C9.19972 8.38152 9.59988 8.10659 9.75874 7.7279L10.6756 5.54288H13.9005C14.1624 5.54288 14.3755 5.31799 14.3755 5.04156V4.21121H14.525C14.7869 4.21121 15 3.98632 15 3.70989V2.59737C15 2.32097 14.787 2.09608 14.525 2.09608ZM8.76318 7.21177H7.53681C7.89356 7.01653 8.12272 6.69341 8.12272 6.32076C8.12272 6.01302 7.96645 5.73903 7.7112 5.54292H9.46343L8.76318 7.21177ZM9.96479 3.15366C9.96479 3.33748 9.8223 3.48788 9.64814 3.48788H4.69858C4.52442 3.48788 4.38193 3.33748 4.38193 3.15366V2.13632C4.38193 1.95251 4.52442 1.80211 4.69858 1.80211H9.64814C9.8223 1.80211 9.96479 1.95251 9.96479 2.13632V3.15366Z" fill="white" stroke="white" stroke-width="0.144756"/>
+            </svg>
+            ACTIVE: <b>ASSAULT RIFLE</b></p>
+        </div>
+        <div id="next-weapon">
+            <p>
+            <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.525 2.09608H14.3755V1.50132C14.3755 1.22489 14.1624 1 13.9005 1H2.6928C2.44673 1 2.20512 1.19685 2.1428 1.44808L2.13552 1.47742H1.47498C1.21308 1.47742 1 1.70231 1 1.97874V3.70993C1 3.98021 1.20383 4.20062 1.45769 4.21031L1.25931 5.01015C1.22574 5.1454 1.24917 5.28126 1.32353 5.38293C1.39788 5.4846 1.51649 5.54288 1.64892 5.54288H2.79701L1.04072 11.2881C0.985972 11.4671 1.00798 11.6472 1.10098 11.7822C1.19401 11.9172 1.34968 11.9948 1.52793 11.995L6.33518 12H6.33578C6.50645 12 6.66725 11.9295 6.78853 11.8015C6.90981 11.6735 6.97659 11.5039 6.97659 11.3237V10.136C6.97659 9.76285 6.68891 9.45922 6.33533 9.45922H6.0424C5.97061 9.45922 5.91447 9.43509 5.88426 9.39134C5.85405 9.34752 5.84956 9.28369 5.87166 9.21163L6.12571 8.38152H8.8072C9.19972 8.38152 9.59988 8.10659 9.75874 7.7279L10.6756 5.54288H13.9005C14.1624 5.54288 14.3755 5.31799 14.3755 5.04156V4.21121H14.525C14.7869 4.21121 15 3.98632 15 3.70989V2.59737C15 2.32097 14.787 2.09608 14.525 2.09608ZM8.76318 7.21177H7.53681C7.89356 7.01653 8.12272 6.69341 8.12272 6.32076C8.12272 6.01302 7.96645 5.73903 7.7112 5.54292H9.46343L8.76318 7.21177ZM9.96479 3.15366C9.96479 3.33748 9.8223 3.48788 9.64814 3.48788H4.69858C4.52442 3.48788 4.38193 3.33748 4.38193 3.15366V2.13632C4.38193 1.95251 4.52442 1.80211 4.69858 1.80211H9.64814C9.8223 1.80211 9.96479 1.95251 9.96479 2.13632V3.15366Z" fill="white" stroke="white" stroke-width="0.144756"/>
+            </svg>
+            NEXT: <b>ASSAULT RIFLE</b></p>
+        </div>
+        <div id="remaing-kill">
+            <p><i class="fas fa-skull" style="font-size: 13px; margin-right: 10.5px; margin-bottom:-2px;"></i>KILLS LEFT: <b>5</b></p>
+        </div>
+        <div id="remaing-weapon">
+            <p><i class="fas fa-crosshairs" style="font-size: 13px; margin-right: 10.5px; margin-bottom:-2px;"></i>WEAPONS LEFT: <b>5</b></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

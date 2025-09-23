@@ -1,0 +1,1298 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Istok+Web:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Istok Web", sans-serif;
+  user-select: none;
+}
+
+.gungame-finish{
+  display: none;
+  position: absolute;
+  right: 20vw;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 30px;
+  background: #00000086;
+  width: 20vw;
+}
+
+.gungame-finish .title{
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+  font-family: 'Poppins';
+}
+
+.gungame-finish .content{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.gungame-finish .pp{
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.gungame-finish .pp img{
+  width: 100%;
+  height: 100%;
+}
+
+.gungame-finish .name{
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+body {
+  background-image: url(../asd.png);
+  background-size: cover;
+}
+
+main {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.feed-pp{
+  height: 100%;
+  overflow: hidden;
+}
+
+.facetoface{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  background: #00000071;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  display: none;
+  padding: 10px;
+}
+
+.facetoface .title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins' !important;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background: #00000086;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.facetoface .users{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.facetoface .users .user{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.facetoface .users .user .name{
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.facetoface .users .user .score{
+  width: 25%;
+  text-align: right;
+}
+
+main .pp img {
+  border-radius: 50px;
+}
+
+main .stats {
+  width: 60vw;
+  height: 100vh;
+  position: absolute;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .stats .animator {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  position: relative;
+  transition: height 2s ease-out;
+}
+
+main .stats .animator.active {
+  height: 100vh !important;
+}
+
+main .stat {
+  width: 130px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  position: absolute;
+}
+
+main .stat .top {
+  display: flex;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .stat .top .title {
+  color: #FFF;
+  font-size: 24px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+
+main .stat .divider {
+  width: 100%;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  position: relative;
+}
+
+main .stat .divider .line-1 {
+  height: 2px;
+  width: 100%;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  background-color: #fff;
+}
+
+main .stat .divider .line-2 {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  height: 2px;
+  width: 20%;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+main .stat .divider .line-3 {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  height: 2px;
+  width: 10%;
+  background-color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  opacity: 0.3;
+}
+
+main .stat .content {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 300;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .stat#kda{
+  margin-top: 12vh;
+}
+
+main .stat#kda .arrow {
+  position: absolute;
+  top: 80px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  left: 50%;
+}
+
+main .stat#rank {
+  transform: translate(2vw, -10vh);
+}
+
+main .stat#rank .arrow {
+  position: absolute;
+  top: 80px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  left: 50%;
+}
+
+main .stat#death {
+  margin-left: 14vw;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  margin-top: -5vh;
+}
+
+main .stat#death .arrow {
+  top: 40px;
+  position: absolute;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  right: 110%;
+}
+
+main .stat#kill {
+  margin-left: 18vw;
+  margin-top: 10vh;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .stat#kill .arrow {
+  top: 80px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  position: absolute;
+  right: 50%;
+}
+
+main .character {
+  display: flex;
+  position: absolute;
+  left: 22vw;
+  top: 10vh;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  gap: 10px;
+  padding-left: 12vw;
+  padding-top: 4vh;
+}
+
+main .character .arrow {
+  padding-top: 30px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .character .char {
+  display: flex;
+  align-items: center;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  gap: 10px;
+  height: fit-content;
+}
+
+main .character .title-wrapper {
+  display: flex;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+main .character .title-wrapper .title {
+  color: #FFF;
+  font-size: 10px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  font-weight: 500;
+  line-height: 10px;
+  opacity: 0.5;
+}
+
+main .character .title-wrapper .subtitle {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+  line-height: 16px;
+}
+
+main .right {
+  width: 38vw;
+  height: 80vh;
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+main .right .buttons-wrapper {
+  position: relative;
+  width: 100%;
+  justify-content: end;
+  display: flex;
+  gap: 80px;
+  padding: 30px;
+}
+
+main .right .buttons-wrapper .button {
+  position: relative;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+
+main .right .buttons-wrapper .button.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+main .right .buttons-wrapper .button:hover {
+  scale: 1.1;
+}
+
+main .right .buttons-wrapper .button:hover .outline-1 {
+  width: 72px;
+  height: 72px;
+  transition-delay: 150ms;
+}
+
+main .right .buttons-wrapper .button:hover .outline-2 {
+  width: 60px;
+  height: 60px;
+  transition-delay: 100ms;
+}
+
+main .right .buttons-wrapper .button .outline-1 {
+  width: 63px;
+  height: 63px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .right .buttons-wrapper .button .outline-2 {
+  width: 57px;
+  height: 57px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .right .buttons-wrapper .button .inner {
+  width: 49px;
+  height: 49px;
+  border-radius: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .right .buttons-wrapper .button .inner .icon {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+main .right .selections {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+main .right .selections .col-l, main .right .selections .col-m, main .right .selections .col-s {
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #FFF;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .right .selections .col-l:hover, main .right .selections .col-m:hover, main .right .selections .col-s:hover {
+  scale: 1.02;
+}
+
+main .right .selections .title-wrapper {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .right .selections .title-wrapper .title {
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: -2.4px;
+  font-weight: 700;
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+main .right .selections .title-wrapper .subtitle {
+  color: rgba(217, 217, 217, 0.8);
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.8px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .right .selections .row-l {
+  width: calc(50% - 13.5px);
+  height: calc(80% - 27px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+main .right .selections .row-l .bg-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+}
+
+main .right .selections .row-l .col-l {
+  height: 100%;
+  width: 100%;
+}
+
+main .right .selections .row-l .col-m {
+  height: calc(60% - 27px);
+  width: 100%;
+  border-radius: 2px;
+}
+
+main .right .selections .row-l .col-s {
+  height: 40%;
+  width: 100%;
+  border-radius: 2px;
+}
+
+main .right .selections .row-s {
+  width: 100%;
+  height: 20%;
+}
+
+main .right .selections .row-s .bg-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+}
+
+main .right .selections .row-s .col-l {
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+}
+
+main .right2 {
+  width: 38vw;
+  height: 80vh;
+  position: absolute;
+  right: 5vw;
+  top: 60%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+main .right2 .gamemodes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+  margin-top: 3.2%;
+}
+
+main .right2 .gamemodes .col-l, main .right2 .gamemodes .col-m, main .right2 .gamemodes .col-s {
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #FFF;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .right2 .gamemodes .col-l:hover, main .right2 .gamemodes .col-m:hover, main .right2 .gamemodes .col-s:hover {
+  scale: 1.02;
+}
+
+main .right2 .gamemodes .title-wrapper {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .right2 .gamemodes .title-wrapper .title {
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: -2.4px;
+  font-weight: 700;
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+main .right2 .gamemodes .title-wrapper .subtitle {
+  color: rgba(217, 217, 217, 0.8);
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.8px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .right2 .gamemodes .row-l {
+  width: calc(50% - 13.5px);
+  height: calc(80% - 27px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+main .right2 .gamemodes .row-l .bg-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+}
+
+main .right2 .gamemodes .row-l .col-m {
+  height: calc(58.8% - 27px);
+  width: 100%;
+  border-radius: 2px;
+}
+
+main .right2 .gamemodes .row-s {
+  width: 100%;
+  height: 20%;
+}
+
+main .right2 .gamemodes .row-s .bg-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+}
+
+main .back {
+  width: 38vw;
+  position: absolute;
+  right: 5vw;
+  top: 12.8%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 70px;
+}
+
+main .back .buttons-wrapper {
+  position: relative;
+  width: 100%;
+  justify-content: end;
+  display: flex;
+  gap: 80px;
+  padding: 30px;
+}
+
+main .back .buttons-wrapper .button {
+  position: relative;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+
+main .back .buttons-wrapper .button:hover {
+  scale: 1.1;
+}
+
+main .back .buttons-wrapper .button:hover .outline-1 {
+  width: 72px;
+  height: 72px;
+  transition-delay: 150ms;
+}
+
+main .back .buttons-wrapper .button:hover .outline-2 {
+  width: 60px;
+  height: 60px;
+  transition-delay: 100ms;
+}
+
+main .back .buttons-wrapper .button .outline-1 {
+  width: 63px;
+  height: 63px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .back .buttons-wrapper .button .outline-2 {
+  width: 57px;
+  height: 57px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .back .buttons-wrapper .button .inner {
+  width: 49px;
+  height: 49px;
+  border-radius: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .back .buttons-wrapper .button .inner .icon {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+main .default_damaged_mods {
+  display: none;
+}
+
+main .custom_damaged_mods {
+  display: none;
+}
+
+main .advanced_mods {
+  display: none;
+}
+
+main .game1 {
+  top: 22%;
+  right: 24.7%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game2 {
+  top: 22%;
+  right: 5%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game3 {
+  top: 37%;
+  right: 24.7%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game4 {
+  top: 37%;
+  right: 5%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game5 {
+  top: 51%;
+  right: 24.7%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game6 {
+  top: 51%;
+  right: 5%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game7 {
+  top: 65%;
+  right: 24.7%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game8 {
+  top: 65%;
+  right: 5%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game9 {
+  top: 79%;
+  right: 24.7%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .game10 {
+  top: 79%;
+  right: 5%;
+  position: absolute;
+  cursor: pointer;
+  transition: scale 0.15s;
+}
+
+main .kutu .title-wrapper {
+  width: 70%;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .kutu .title-wrapper .title {
+  margin-top: 1.1vh;
+  color: #F2F2F2;
+  text-align: left;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+main .kutu .title-wrapper .subtitle {
+  color: rgba(217, 217, 217, 0.8);
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.8px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
+
+main .game1:hover, main .game2:hover, main .game3:hover, main .game4:hover, main .game5:hover, main .game6:hover, main .game7:hover, main .game8:hover, main .game9:hover, main .game10:hover {
+  scale: 1.02;
+}
+
+main .default_damaged_mods .mode-text {
+  top: 9%;
+  color: #F2F2F2;
+  text-align: left;
+  font-size: 38px;
+  font-weight: 700;
+  position: absolute;
+  right: 14.7%;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 0.8vw 1.2vw 0.8vw 1.2vw;
+  border-radius: 1px;
+  border: 1.5px solid #FFF;
+}
+
+main .custom_damaged_mods .mode-text {
+  top: 9%;
+  color: #F2F2F2;
+  text-align: left;
+  font-size: 38px;
+  font-weight: 700;
+  position: absolute;
+  right: 14.8%;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 0.8vw 1.2vw 0.8vw 1.2vw;
+  border-radius: 1px;
+  border: 1.5px solid #FFF;
+}
+
+main .advanced_mods .mode-text {
+  top: 9%;
+  color: #F2F2F2;
+  text-align: left;
+  font-size: 38px;
+  font-weight: 700;
+  position: absolute;
+  right: 23.2%;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 0.8vw 1.2vw 0.8vw 1.2vw;
+  border-radius: 1px;
+  border: 1.5px solid #FFF;
+}
+
+main .right3 {
+  width: 38vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+main .right3 .leaderboard:not(.active) {
+  transform: translateX(60vw);
+}
+
+main .right3 .help-menu:not(.active) {
+  transform: translateX(60vw);
+}
+
+main .right3 .settings:not(.active) {
+  transform: translateX(60vw);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 0 1px 0 #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(31px);
+}
+
+.slider.round {
+  border-radius: 6px;
+}
+
+.slider.round:before {
+  border-radius: 3px;
+}
+
+.ayar-button {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.clothing-button {
+  background: none;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 0 1px 0 #c4c4c4;
+  border-radius: 6px;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.game-mode .game.deactive {
+  pointer-events: none;
+}
+
+.game-mode .game.deactive::after {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "MODE DEACTIVE";
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 122px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.gamemodes .col-m.deactive {
+  pointer-events: none;
+}
+
+.gamemodes .col-m.deactive::after {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "MOD DEACTIVE";
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.game {
+  position: relative;
+}
+
+select {
+  font-family: "Istok Web";
+  appearance: none;
+  border: 0;
+  outline: 0;
+  width: 15em;
+  height: 2.5em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(0, 0, 0, 0.5) 3em, rgba(0, 0, 0, 0.3) 3em);
+  color: #FFF;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+option {
+  color: inherit;
+  background-color: #151515;
+  border: 0;
+}
+
+option:focus {
+  outline: none;
+}
+
+option::-ms-expand {
+  display: none;
+}
+
+.leaderboard, .help-menu, .settings {
+  border-radius: 5px;
+  background: rgba(11, 11, 11, 0.9);
+  padding: 40px;
+  position: absolute;
+  top: 12vh;
+  right: 5vw;
+  z-index: 999;
+  width: 35vw;
+}
+.leaderboard.help-menu .header, .leaderboard.settings .header, .help-menu.help-menu .header, .help-menu.settings .header, .settings.help-menu .header, .settings.settings .header {
+  margin-bottom: 30px;
+}
+.leaderboard .header, .help-menu .header, .settings .header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.leaderboard .header .icon, .help-menu .header .icon, .settings .header .icon {
+  height: 65px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(260deg, rgba(217, 217, 217, 0.15) 0%, rgba(217, 217, 217, 0.03) 100%);
+  border: #424242 1px solid;
+  border-radius: 4px;
+}
+.leaderboard .header .title, .help-menu .header .title, .settings .header .title {
+  color: #CDCDCD;
+  text-shadow: 0px 4px 100px rgba(195, 195, 195, 0.5);
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+}
+.leaderboard .header .subtitle, .help-menu .header .subtitle, .settings .header .subtitle {
+  color: rgba(255, 255, 255, 0.33);
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.leaderboard .settings-wrapper, .help-menu .settings-wrapper, .settings .settings-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  overflow-y: scroll;
+  gap: 10px;
+}
+.leaderboard .settings-wrapper::-webkit-scrollbar, .help-menu .settings-wrapper::-webkit-scrollbar, .settings .settings-wrapper::-webkit-scrollbar {
+  width: 0px;
+}
+.leaderboard .settings-wrapper .btn-wrap, .help-menu .settings-wrapper .btn-wrap, .settings .settings-wrapper .btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.leaderboard .settings-wrapper .setting .title, .help-menu .settings-wrapper .setting .title, .settings .settings-wrapper .setting .title {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  color: #AEAEAE;
+  background: rgba(217, 217, 217, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 13px;
+  font-family: "Poppins";
+}
+.leaderboard .settings-wrapper .setting .content, .help-menu .settings-wrapper .setting .content, .settings .settings-wrapper .setting .content {
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  color: #AEAEAE;
+  font-size: 14px;
+  background: rgba(217, 217, 217, 0.03);
+  font-weight: 400;
+  padding: 8px 13px;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: space-between;
+}
+.leaderboard .settings-wrapper .setting .content .subtitle, .help-menu .settings-wrapper .setting .content .subtitle, .settings .settings-wrapper .setting .content .subtitle {
+  width: 60%;
+}
+.leaderboard .help-boxes, .help-menu .help-boxes, .settings .help-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 50vh;
+  overflow-y: scroll;
+}
+.leaderboard .help-boxes::-webkit-scrollbar, .help-menu .help-boxes::-webkit-scrollbar, .settings .help-boxes::-webkit-scrollbar {
+  width: 0px;
+}
+.leaderboard .help-boxes .box, .help-menu .help-boxes .box, .settings .help-boxes .box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.leaderboard .help-boxes .box .title, .help-menu .help-boxes .box .title, .settings .help-boxes .box .title {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  color: #AEAEAE;
+  background: rgba(217, 217, 217, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 13px;
+  font-family: "Poppins";
+}
+.leaderboard .help-boxes .box .desc, .help-menu .help-boxes .box .desc, .settings .help-boxes .box .desc {
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  color: #AEAEAE;
+  font-size: 14px;
+  background: rgba(217, 217, 217, 0.03);
+  font-weight: 400;
+  padding: 8px 13px;
+  font-family: "Poppins";
+}
+.leaderboard .select .title, .help-menu .select .title, .settings .select .title {
+  color: #595959;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+}
+.leaderboard .select .dropdown, .help-menu .select .dropdown, .settings .select .dropdown {
+  width: 170px;
+  padding: 4px 6px;
+  color: #595959;
+  border-radius: 4px;
+  background: rgba(217, 217, 217, 0.05);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.settings .select .btn {
+  width: 170px;
+  padding: 4px 6px;
+  color: #FFF;
+  border-radius: 4px;
+  background: rgba(217, 217, 217, 0.10);
+  font-size: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.leaderboard .table .head, .help-menu .table .head, .settings .table .head {
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  background: rgba(217, 217, 217, 0.05);
+  color: #AEAEAE;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+}
+.leaderboard .table .head > div, .help-menu .table .head > div, .settings .table .head > div {
+  width: 25%;
+  text-align: center;
+  padding: 8px 13px;
+  font-family: "Poppins";
+}
+.leaderboard .table .head > div:first-child, .leaderboard .table .head > div:last-child, .help-menu .table .head > div:first-child, .help-menu .table .head > div:last-child, .settings .table .head > div:first-child, .settings .table .head > div:last-child {
+  width: 12%;
+}
+.leaderboard .table .body, .help-menu .table .body, .settings .table .body {
+  max-height: 435px;
+  overflow-y: scroll;
+}
+.leaderboard .table .body::-webkit-scrollbar, .help-menu .table .body::-webkit-scrollbar, .settings .table .body::-webkit-scrollbar {
+  width: 0px;
+}
+.leaderboard .table .body .box, .help-menu .table .body .box, .settings .table .body .box {
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  background: rgba(217, 217, 217, 0.05);
+  color: #CDCDCD;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+}
+.leaderboard .table .body .box > div, .help-menu .table .body .box > div, .settings .table .body .box > div {
+  width: 25%;
+  text-align: center;
+  padding: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+}
+.leaderboard .table .body .box > div:first-child, .leaderboard .table .body .box > div:last-child, .help-menu .table .body .box > div:first-child, .help-menu .table .body .box > div:last-child, .settings .table .body .box > div:first-child, .settings .table .body .box > div:last-child {
+  width: 12%;
+}
+.leaderboard .table .self, .help-menu .table .self, .settings .table .self {
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  background: rgba(217, 217, 217, 0.05);
+  color: #CDCDCD;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  margin-top: 25px;
+}
+.leaderboard .table .self > div, .help-menu .table .self > div, .settings .table .self > div {
+  width: 25%;
+  text-align: center;
+  padding: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+}
+.leaderboard .table .self > div:first-child, .leaderboard .table .self > div:last-child, .help-menu .table .self > div:first-child, .help-menu .table .self > div:last-child, .settings .table .self > div:first-child, .settings .table .self > div:last-child {
+  width: 12%;
+}
+
+#gungame-board {
+  display: none;
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 15px;
+  left: 16.5vw;
+  width: 25vh;
+  height: fit-content;
+  bottom: 3.3vh;
+}
+
+#gungame-board p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+#gungame-board>div{
+  border-radius: 2px;
+  border-left: 3px solid rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 10px 20px; 
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+#gungame-board>div:last-child{
+  margin: 0;
+}
+  
+#current-weapon {
+  display: none;
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+#next-weapon {
+  display: none;
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+#remaing-kill {
+  display: none;
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+#remaing-weapon {
+  display: none;
+  font-size: 14px;
+  font-family: 'Poppins';
+}

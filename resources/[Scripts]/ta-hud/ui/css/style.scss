@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+    font-family: 'Black Ops One', cursive;
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    .killed-text {
+        display: none;
+        position: absolute;
+        top: 80vh;
+        left: 48%;
+        font-weight: 700;
+        font-size: 0.8vw;
+        text-align: center;
+        text-shadow: rgb(0, 0, 0) 1px 0 10px;
+        opacity: 1.0;
+    }
+
+    .kill-feed-wrapper{
+        position: absolute;
+        right: 2vw;
+        top: 2vh;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: end;
+
+        .kill-feed{
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            
+            .other{
+                font-size: 14px;
+                color: #fff;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    background: rgba($color: #000000, $alpha: 0.5);
+                    border-radius: 3px;
+                    padding: 7px 15px;
+                    height: 34px;
+                }
+            }
+
+            .wrapper{
+                padding: 7px 15px;
+                background: rgba($color: #000000, $alpha: 0.5);
+                gap: 15px;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 500;
+                align-items: center;
+                border-radius: 3px;
+                display: flex;
+        
+                img{
+                    max-height: 20px;
+                }
+            }
+        }
+    }
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+
+    .hud{
+        position: absolute;
+        right: 2vw;
+        bottom: 2vh;
+        width: 306px;
+        height: 98px;
+
+        .streak{
+            position: absolute;
+            right: 159px;
+            top: -33px;
+            width: 104px;
+            height: 34px;
+            z-index: 10;
+            transition: right 0.3s;
+            display: none;
+
+            .bg{
+                position: absolute;
+                z-index: -1;
+            }
+
+            .content{
+                width: 100%;
+                height: 100%;
+                gap: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FFF;
+                font-size: 14px;
+                padding-right: 10px;
+            }
+        }
+
+        .weapon{
+            position: absolute;
+            right: 0;
+            top: -33px;
+            width: 176px;
+            height: 34px;
+            z-index: 10;
+
+            .bg{
+                position: absolute;
+                z-index: -1;
+            }
+
+            .content{
+                width: 100%;
+                height: 100%;
+                gap: 14px;
+                padding-left: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FFF;
+                font-size: 14px;
+                padding-right: 10px;
+
+                .weapon-img{
+                    width: 75px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    height: 25px;
+
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                .ammo-wrap{
+                    display: flex;
+                    gap: 5px;
+
+                    .text-wrap{
+                        display: flex;
+                        align-items: end;
+                    }
+
+                    .ammo{
+                        color: #FFF;
+                        font-size: 14px;
+                    }
+
+                    .ammo-clip{
+                        color: rgba(255, 255, 255, 0.50);
+                        font-size: 10px;
+                        padding-bottom: 2px;
+                    }
+                }
+            }
+        }
+
+        .bottom{
+            position: relative;
+            z-index: 10;
+
+            .bg{
+                z-index: -1;
+                position: absolute;
+            }
+
+            .content{
+                width: 100%;
+                height: 65px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 5px;
+                padding-right: 10px;
+
+                .health, .armor{
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+                    gap: 3px;
+
+                    .bar{
+                        width: 252px;
+                        display: flex;
+                        justify-content: end;
+
+                        .bg-bar{
+                            position: absolute;
+                        }
+                    }
+
+                    &.armor{
+                        .icon{
+                            background: #1F79FF;
+                        }
+                    }
+
+                    .icon{
+                        width: 28px;
+                        height: 20px;
+                        border-radius: 1px;
+                        background: rgb(201, 72, 72);
+                        box-shadow: 0px 0px 10px 0px rgba(201, 72, 72, 0.25);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,8 @@
+# Ignore folder cache
+cache/
+
+# Ignore replxx history
+.replxx_history
+
+# Ignore backup config
+server.cfg.bkp

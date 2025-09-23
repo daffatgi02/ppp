@@ -1,0 +1,2 @@
+local PlayerStats = {}
+local PlayerInfos = {}

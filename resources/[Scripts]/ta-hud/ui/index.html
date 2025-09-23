@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAC HUD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@alphardex/aqua.css@1.5.5/dist/aqua.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+</head>
+<body>
+    <main>
+        <div class="killed-text editable"></div>
+        <div class="kill-feed-wrapper editable"></div>
+        <div class="hud editable">
+            <div class="top">
+                <div class="streak">
+                    <div class="bg bg-1"><img src="assets/streak-bg.png"></div>
+                    <div class="bg bg-2"><img src="assets/streak-bg-2.png"></div>
+                    <div class="content">
+                        <img src="assets/icon.png">
+                        <span id="streak">0x</span>
+                    </div>
+                </div>
+                <div class="weapon">
+                    <div class="bg"><img src="assets/weapon-bg.png"></div>
+                    <div class="content">
+                        <div class="weapon-img"><img src="assets/weapons/assaultrifle.png"></div>
+                        <div class="ammo-wrap">
+                            <div class="icon"><img src="assets/ammo.png"></div>
+                            <div class="text-wrap">
+                                <div class="ammo">50</div>
+                                <div class="ammo-clip">/100</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bg">
+                    <img src="assets/main-bg.png">
+                </div>
+
+                <div class="content">
+                    <div class="armor">
+                        <div class="bar">
+                            <div class="bg-bar">
+                                <svg width="251" height="20" viewBox="0 0 251 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.1" d="M9.70711 0.292892C9.89464 0.105356 10.149 0 10.4142 0H250C250.552 0 251 0.447715 251 1V19C251 19.5523 250.552 20 250 20H1.00001C0.447723 20 0 19.5523 0 19V10.4142C0 10.149 0.105357 9.89464 0.292893 9.70711L9.70711 0.292892Z" fill="#4881d6"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="main-bar">
+                                <svg width="251" height="20" viewBox="0 0 251 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.70711 0.292892C9.89464 0.105356 10.149 0 10.4142 0H250C250.552 0 251 0.447715 251 1V19C251 19.5523 250.552 20 250 20H1.00001C0.447723 20 0 19.5523 0 19V10.4142C0 10.149 0.105357 9.89464 0.292893 9.70711L9.70711 0.292892Z" fill="#4881d6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="icon">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5731 1.71283L10.3603 1.6979C7.93801 1.52512 5.43853 0.0874494 5.41514 0.0746516L5.28889 0L5.16263 0.0746516C5.13924 0.0874494 2.63977 1.52512 0.21745 1.6979L0.00468492 1.71283L4.05927e-06 1.90695C4.05927e-06 1.96241 -0.0303933 7.42515 5.16964 10.2493L5.28889 10.3133L5.40814 10.2493C10.6082 7.42515 10.5778 1.96241 10.5778 1.90695L10.5731 1.71283Z" fill="white"/>
+                                </svg>
+                        </div>
+                    </div>
+                    <div class="health">
+                        <div class="bar">
+                            <div class="bg-bar">
+                                <svg width="251" height="20" viewBox="0 0 251 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.1" d="M0 0H251V20H10L0 10V0Z" fill="#c94848"/>
+                                </svg>
+                            </div>
+
+                            <div class="main-bar">
+                                <svg width="251" height="20" viewBox="0 0 251 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0H251V20H10L0 10V0Z" fill="#c94848"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="icon">
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.4434 0.888145C9.41631 -0.29231 7.74848 -0.29231 6.72133 0.888145L6.02217 1.68727L5.323 0.885341C4.29331 -0.295114 2.62802 -0.295114 1.60088 0.885341C0.444075 2.2116 0.444075 4.36502 1.60088 5.69128L6.02217 10.7692L10.4434 5.69408C11.6003 4.36782 11.6003 2.2144 10.4434 0.888145Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notify-container w-72">
+            <ul class="ios-notifications">
+        
+            </ul>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

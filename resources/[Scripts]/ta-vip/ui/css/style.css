@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: none;
+  overflow: hidden;
+}
+
+#nickBtn {
+  position: relative;
+}
+
+#nickBtn input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+}
+
+main .back {
+  width: 38vw;
+  position: absolute;
+  right: 5vw;
+  top: 12.8%;
+  transform: translateY(-50%);
+  flex-direction: column;
+  gap: 70px;
+}
+
+main .back .buttons-wrapper {
+  position: relative;
+  width: 100%;
+  justify-content: end;
+  display: flex;
+  gap: 80px;
+  padding: 30px;
+}
+
+main .back .buttons-wrapper .button {
+  position: relative;
+  cursor: pointer;
+  transition: scale 0.3s;
+}
+
+main .back .buttons-wrapper .button:hover {
+  scale: 1.1;
+}
+
+main .back .buttons-wrapper .button:hover .outline-1 {
+  width: 72px;
+  height: 72px;
+  transition-delay: 150ms;
+}
+
+main .back .buttons-wrapper .button:hover .outline-2 {
+  width: 60px;
+  height: 60px;
+  transition-delay: 100ms;
+}
+
+main .back .buttons-wrapper .button .outline-1 {
+  width: 63px;
+  height: 63px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .back .buttons-wrapper .button .outline-2 {
+  width: 57px;
+  height: 57px;
+  border-radius: 52px;
+  border: 1px solid #FFF;
+  opacity: 0.3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+main .back .buttons-wrapper .button .inner {
+  width: 49px;
+  height: 49px;
+  border-radius: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .back .buttons-wrapper .button .inner .icon {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.settings {
+  border-radius: 5px;
+  background: rgba(11, 11, 11, 0.9);
+  padding: 40px;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  right: 5vw;
+  z-index: 999;
+  width: 35vw;
+}
+.settings .disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.settings .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+.settings .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.settings .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 0 1px 0 #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.settings .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #c4c4c4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.settings input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+.settings input:checked + .slider:before {
+  transform: translateX(31px);
+}
+.settings .slider.round {
+  border-radius: 6px;
+}
+.settings .slider.round:before {
+  border-radius: 3px;
+}
+.settings .btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings .clothing-button {
+  background: none;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 0 1px 0 #c4c4c4;
+  border-radius: 6px;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.settings .select .title {
+  color: #595959;
+  font-size: 12px;
+  font-weight: 400;
+}
+.settings .select .btn {
+  width: 170px;
+  padding: 4px 6px;
+  color: #FFF;
+  border-radius: 4px;
+  background: rgba(217, 217, 217, 0.1);
+  font-size: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.settings .select .btn:hover {
+  background: rgba(217, 217, 217, 0.15);
+}
+.settings.settings .header {
+  margin-bottom: 30px;
+}
+.settings .header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.settings .header .icon {
+  height: 65px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(260deg, rgba(217, 217, 217, 0.15) 0%, rgba(217, 217, 217, 0.03) 100%);
+  border: #424242 1px solid;
+  border-radius: 4px;
+}
+.settings .header .title {
+  color: #CDCDCD;
+  text-shadow: 0px 4px 100px rgba(195, 195, 195, 0.5);
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+}
+.settings .header .subtitle {
+  color: rgba(255, 255, 255, 0.33);
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.settings .settings-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  overflow-y: scroll;
+  gap: 10px;
+}
+.settings .settings-wrapper::-webkit-scrollbar {
+  width: 0px;
+}
+.settings .settings-wrapper .btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings .settings-wrapper .setting .title {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  color: #AEAEAE;
+  background: rgba(217, 217, 217, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 13px;
+  font-family: "Poppins";
+}
+.settings .settings-wrapper .setting .content {
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  color: #AEAEAE;
+  font-size: 14px;
+  background: rgba(217, 217, 217, 0.03);
+  font-weight: 400;
+  padding: 8px 13px;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: space-between;
+}
+.settings .settings-wrapper .setting .content .subtitle {
+  width: 60%;
+}
+
+.color-input {
+  position: absolute;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  z-index: 9999999;
+}
+
+select.color-input {
+  min-width: 150px;
+  border: 0;
+  outline: 0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(16, 16, 16, 0.8);
+  color: #9c9c9c;
+  font-weight: 600;
+}
+
+.color-input-background {
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,748 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    /* background-image: url("img/bg.png"); */
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    box-sizing:border-box;
+    /* background-color: black; */
+}
+
+body::-webkit-scrollbar {
+    display:none;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg: #171717;
+    --bg-l: #1e1e1e;
+    --select: #262626;
+    --primary: #DA0037;
+    --text: #EDEDED;
+    --text2: #7272
+    b72;
+    --green: rgba(44, 224, 101, 0.1);
+    --green2: rgba(44, 224, 101, 0.25);
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    --gradient-1: rgba(218, 0, 55, 0.25);
+    --gradient-2: rgba(218, 0, 55, 0.1);
+    --gradient-3: rgba(218, 0, 55, 0.25);
+    --gradient-4: rgba(218, 0, 55, 0.5);
+    --heal:   rgb(201, 72, 72);
+    --armour: #4881d6;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+@font-face {
+    font-family: regular;
+    src: url(fonts/Metropolis-Regular.otf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(fonts/Metropolis-Medium.otf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(fonts/Metropolis-Bold.otf);
+}
+
+@font-face {
+    font-family: italic;
+    src: url(fonts/SignPainter\HouseScript.ttf);
+}
+
+@font-face {
+    font-family: kmh;
+    src: url(fonts/HKNova-Medium.otf);
+}
+
+@font-face {
+    font-family: italic;
+    src: url(fonts/gta5.ttf);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .25vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5.1vw;
+    width: 35.05vw;
+    height: 72vh;
+    border-radius: 5px;
+    background: rgba(11, 11, 11, 0.9);
+    padding: 40px;
+}
+
+.wrapper .buttons-wrapper{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.wrapper .buttons-wrapper .btn{
+    border-radius: 4px;
+    background: rgba(217, 217, 217, 0.10);
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 30px;
+}
+
+.wrapper .buttons-wrapper .btn:hover{
+    background: rgba(217, 217, 217, 0.15);
+}
+
+.wrapper .header{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.wrapper .header .icon{
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(266deg, rgba(217, 217, 217, 0.15) 6.46%, rgba(217, 217, 217, 0.03) 87.8%);
+    border: 1px solid #424242;
+    border-radius: 4px;
+}
+
+.wrapper .header .title{
+    color: #CDCDCD;
+    text-shadow: 0px 4px 100px rgba(195, 195, 195, 0.50);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.wrapper .header .subtitle{
+    color: rgba(255, 255, 255, 0.33);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.search {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.searchdiv {
+    width:  calc(4vh - .5vh);
+    height: calc(90% - .5vh - .1vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25vh;
+    gap: .5vh;
+    border-radius: .25vh;
+    background-color: var(--bg-l);
+    transition: .5s ease-out;
+    border-bottom: .1vh solid transparent;
+    text-align: center;
+}
+
+.searchdiv:hover {
+    cursor: pointer;
+    width: 11vh;
+    box-shadow: var(--shadow);
+    background-color: var(--select);
+    border-color: var(--primary);
+}
+
+.searchdiv:hover > input {
+    transition: .5s ease-out;
+    display: block;
+}
+
+.searchdiv > i {
+    color: var(--text);
+    font-size: 1.25vh;
+}
+
+.searchdiv > input {
+    display: none;
+    width: 80%;
+    height: 60%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text);
+    font-size: 1.25vh;
+    font-weight: 400;
+}
+
+.squads, .invites {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.creates {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.create-squad {
+    width: 100%;
+    height: 5.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .25vh;
+    gap: .5vh;
+}
+
+.create-squad > input {
+    border-radius: .25vh;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    color: var(--text);
+    font-size: 1.25vh;
+    font-weight: 500;
+    padding: 5px 30px;
+    background-color: var(--bg-l);
+    box-sizing: border-box;
+}
+
+.create-squad > span {
+    color: var(--text);
+    font-size: 1.25vh;
+    font-weight: 400;
+}
+
+#squadprivate {
+    width: 2vh;
+    border-radius: .25vh;
+    border: none;
+    outline: none;
+}
+
+.create-squads {
+    width: 2.5vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: .25vh;
+    cursor: pointer;
+}
+
+.create-squads:hover > i {
+    color: var(--text);
+}
+
+.create-squads:hover {
+    background-color: var(--green2);
+}
+
+.create-squads:active {
+    background-color: var(--green2);
+}
+
+.create-squads > i {
+    color: var(--text2);
+    font-size: 1.25vh;
+}
+
+
+.privateselect {
+    width: 2.5vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: .25vh;
+    cursor: pointer;
+}
+
+.privateselect:hover > i {
+    color: var(--text);
+}
+
+.privateselect:hover {
+    background-color: var(--green2);
+}
+
+.privateselect:active {
+    background-color: var(--green2);
+}
+
+.privateselect > i {
+    color: var(--text2);
+    font-size: 1.25vh;
+}
+
+.squad {
+    width:  calc(100% - .5vh);
+    height: calc(4.5vh  - .6vh);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .25vh;
+    margin-block-end: .5vh;
+    background-color: var(--bg-l);
+    padding: .25vh;
+    transition: .3s ease-out;
+    gap: .5vh;
+}
+
+.squad:hover {
+    box-shadow: var(--shadow);
+}
+
+.squad:hover > .s-properties > .decline {
+    background-color: var(--gradient-3);
+}
+
+.squad:hover > .s-properties > .accept {
+    background-color: var(--green2);
+}
+
+.squad:hover > .s-properties > .accept > i {
+    color: var(--text);
+    cursor: pointer;
+}
+
+.squad:hover > .s-properties > .decline > i {
+    color: var(--text);
+    cursor: pointer;
+}
+
+.squad:hover > .s-img {
+    filter: grayscale(0%);
+}
+
+.squad:hover > .s-name > span {
+    color: var(--text);
+}
+
+.squad:hover > .s-properties > span {
+    color: var(--text);
+}
+
+.squad:hover > .s-properties > i {
+    color: var(--text);
+}
+
+.squad:hover > .s-properties > button {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+.s-img {
+    width: 4vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+}
+
+.roomimg {
+    height: 4.5vh;
+
+}
+
+.s-name {
+    width: 40vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.s-name > span {
+    color: var(--text2);
+    font-size: 1.5vh;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.s-properties {
+    width: 13vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25vh;
+}
+
+.s-properties > i {
+    color: var(--text2);
+    font-size: 1.25vh;
+}
+
+.s-properties > span {
+    color: var(--text2);
+    font-size: 1.25vh;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.s-properties > button {
+    border: none;
+    outline: none;
+    width: 5vh;
+    height: 2vh;
+    padding: .25vh;
+    text-align: center;
+    font-weight: 600;
+    border-radius: .25vh;
+    text-transform: uppercase;
+    color: var(--text2);
+    background-color: var(--gradient-1);
+    transition: .2s ease-out;
+    font-size: 1.25vh;
+}
+
+.s-properties > button:hover {
+    transform: scale(1.025);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.s-properties > button:active {
+    position: relative;
+    top: .1vh;
+}
+
+.accept  {
+    width: 2.25vh;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: .25vh;
+    transition: .2s ease-out;
+}
+
+.decline {
+    width: 2.25vh;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: .25vh;
+    transition: .2s ease-out;
+}
+
+.decline {
+    background-color: var(--gradient-2);
+}
+
+.accept:hover {
+    transform: scale(1.15);
+    background-color: var(--green2);
+}
+
+.decline:hover {
+    transform: scale(1.15);
+    background-color: var(--gradient-4);
+}
+
+.accept:active {
+    background-color: var(--green2);
+}
+
+.accept > i {
+    color: var(--text2);
+    font-size: 1vh;
+}
+
+.decline > i {
+    color: var(--text2);
+    font-size: 1vh;
+}
+
+.inmenu {
+    width:  calc(45vh - .5vh);
+    height: calc(25vh - .5vh);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: .25vh;
+    border-radius: .25vh;
+    background-color: var(--bg);
+    padding: .25vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5.1vw;
+}
+
+.i-header {
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: .1vh solid var(--bg-l);
+    position: relative;
+}
+
+.i-header > span {
+    color: var(--text);
+    font-size: 1.75vh;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.i-players {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.players {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(217, 217, 217, 0.03);
+    border-radius: 3px;
+    transition: .2s ease-out;
+    padding: 5px;
+    position: relative;
+}
+
+.players:hover {
+    background-color: var(--select);
+}
+
+.players-img {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;   
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.pimg {
+    height: 100%;
+}
+
+.players-n-r {
+    width: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.players-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.players-name > span {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFF;
+    line-height: 100%;
+}
+
+.players-rank {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #ffffff8d;
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.players-rank > span {
+    font-family: 300;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.players-rank > i {
+    color: var(--text2);
+    font-size: 1vh;
+}
+
+.players-actions {
+    width: 8vh;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.players-actions > button {
+    border: none;
+    outline: none;
+    width: 5vh;
+    height: 2vh;
+    padding: .25vh;
+    text-align: center;
+    font-weight: 600;
+    border-radius: .25vh;
+    text-transform: uppercase;
+    color: var(--text2);
+    background-color: var(--gradient-1);
+    transition: .2s ease-out;
+    font-size: 1.25vh;
+}
+
+.players-actions > button:hover {
+    transform: scale(1.025);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+.players-actions > button:active {
+    position: relative;
+    top: .1vh;
+}
+
+.left-wrapper {
+    position: absolute;
+    right: 3.5vh;
+    bottom: 50vh;
+    width: 21vh;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: .75vh;
+}
+
+.player-box {
+    width:  calc(100% - 1vh);
+    height: calc(5vh  - 1vh);
+    padding: .5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    gap: .5vh;
+    border-radius: .25vh;
+}
+
+.pb-img {
+    width: 4vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pb-image {
+    height: 3vh;
+}
+
+.pb-information {
+    width: calc(100% - 4vh - 1vh);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: .25vh;
+}
+
+.pb-name {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.pb-name > span {
+    color: var(--text);
+    font-size: 1vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+
+.pb-healt {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .25vh;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.pb-healt-in {
+    width: 75%;
+    height: 100%;
+    border-radius: .25vh;
+    background-color: var(--heal);
+}
+
+.pb-armour {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .25vh;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.pb-armour-in {
+    width: 100%;
+    height: 100%;
+    border-radius: .25vh;
+    background-color: var(--armour);
+}

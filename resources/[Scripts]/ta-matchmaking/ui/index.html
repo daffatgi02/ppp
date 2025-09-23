@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+        <title>PROMETH</title>
+    </head>
+    <body style="display: flex;">
+
+        <div class="back">
+            <div class="buttons-wrapper">
+                <div class="button menu-btn">
+                    <div class="outline-1"></div>
+                    <div class="outline-2"></div>
+                    <div class="inner">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <main style="display:none;">
+
+            <div class="header">
+                <div class="icon">
+                    <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25.6423 18.2941C27.5442 19.2962 28.6118 20.9505 28.4262 22.6495C28.3326 23.6948 28.3801 23.6948 26.9414 23.869C26.0595 23.9568 20.4457 24 14.7384 24C8.24264 24 1.46779 23.9568 0.958521 23.8258C-0.943427 23.3463 0.170126 20.0362 2.67488 18.4683C4.67036 17.292 8.70737 15.4634 9.82092 15.2446C11.3517 14.9394 11.5373 14.0251 9.82092 11.2808C9.44973 10.6272 9.03252 8.75401 8.98501 6.75122C8.93898 3.52753 9.54179 1.35052 12.5573 0.262021C13.1141 0.0878045 13.7644 0 14.3672 0C16.3627 0 18.2186 1.0453 19.007 2.57004C20.0745 4.61742 19.5638 9.97491 18.4502 11.9345C17.105 14.1561 17.2431 14.853 18.7293 15.2014C19.6573 15.4188 22.7203 16.7693 25.6423 18.2941ZM35.8038 15.5498C37.2886 16.2899 38.1245 17.6404 37.9849 18.9477C37.9389 19.7324 37.9389 19.7756 36.8253 19.9066C36.2685 19.9944 33.3451 20.0376 29.9124 20.0376C29.3096 18.6871 28.1485 17.4676 26.5717 16.6843C24.7618 15.7254 22.6283 14.7247 21.004 14.0711C22.0715 13.5916 22.9994 13.2 23.4167 13.1122C24.5762 12.8502 24.7158 12.2411 23.4167 10.0627C23.0915 9.54007 22.7203 8.05854 22.6743 6.49059C22.6283 3.96376 23.2311 2.2216 25.5517 1.39512C26.0164 1.26411 26.5257 1.1777 26.9904 1.1777C28.5212 1.1777 29.9599 1.96237 30.5627 3.18188C31.3511 4.79303 30.9799 8.97422 30.1455 10.5422C29.124 12.2843 29.2175 12.807 30.3771 13.069C31.1195 13.2432 33.4861 14.3317 35.8053 15.5512L35.8038 15.5498Z" fill="white"/>
+                        </svg>
+                </div>
+                <div class="title-wrapper">
+                    <div class="title">MATCHMAKING</div>
+                    <div class="subtitle">If you're bored of the general game modes, or if the private lobbies feel empty, you can continue the battle by pairing up with your peers through our competitive system.</div>
+                </div>
+            </div>
+
+            <div class="buttons-wrapper">
+                <div class="back-btn btn disabled" onclick="back()">Back</div>
+                <div class="clear-btn btn disabled" onclick="changediv('main')">Disrupt the Lobby</div>
+            </div>
+
+            <div class="table players">
+                <div class="head">
+                    <div class="name">SEND INVITE</div>
+                </div>
+                <div class="body">
+                    <input type="number" id="inviteInp" placeholder="ENTER ID">
+                    <div class="box" id="inviteBtn">
+                        <div class="name f-w">SEND</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table lobbies">
+                <div class="head">
+                    <div class="name">GAME MODE</div>
+                </div>
+                <div class="body">
+                    <div class="box" onclick="changediv('1v1')">
+                        <div class="name f-w">1V1</div>
+                    </div>
+                    <div class="box" onclick="changediv('2v2')">
+                        <div class="name f-w">2V2</div>
+                    </div>
+                    <div class="box" onclick="changediv('3v3')">
+                        <div class="name f-w">3V3</div>
+                    </div>
+                    <div class="box" onclick="changediv('4v4')">
+                        <div class="name f-w">4V4</div>
+                    </div>
+                    <div class="box" onclick="changediv('5v5')">
+                        <div class="name f-w">5V5</div>
+                    </div>
+                    <!-- <div class="box" onclick="changediv('15v15')">
+                        <div class="name f-w">15V15 (Highway War)</div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="table in-loby">
+                <div class="head">
+                    <div class="name">LOBBY</div>
+                </div>
+                <div class="body">
+                    <div class="box player-1">
+                        <div class="name">ATIYSU</div>
+                    </div>
+                    <div class="box empty player-2" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-3" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-4" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-5" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-6" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-7" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-8" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-9" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-10" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-11" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-12" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-13" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-14" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="box empty player-15" onclick="invitemenu()">
+                        <div class="name f-w">+</div>
+                    </div>
+                    <div class="search-btn box btn-2 disabled" id="matchstartlamabutonu" onclick="startmatchmaking()">
+                        <div class="name">START SEARCH</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table invites">
+                <div class="head">
+                    <div class="name">INVITE</div>
+                </div>
+                <div class="body">
+                    <div class="box">
+                        <div class="name">ATIYSU</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="notify-wrapper">
+            <div class="notify">
+                <div class="notify-top">
+                    <div class="title">ALERT</div>
+                    <div class="progress">
+                        <div class="progbar"></div>
+                    </div>
+                </div>
+                <div class="desc">Alli Gulli has invited you to a lobby</div>
+                <div class="btn-wrapper">
+                    <div class="btn" id="btn-accept">ACCEPT (F9)</div>
+                    <div class="btn btn-2" id="btn-decline">DECLINE (F10)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notify-container">
+            <!-- <div class="notify2">
+                <div class="notify2-top">
+                    <div class="title">Notify</div>
+                </div>
+                <div class="desc">You cannot start matchmaking,</div>
+            </div> -->
+        </div>
+
+        <div class="in-game">
+            <div class="team-1 team">0</div>
+            <div class="round">VS</div>
+            <div class="team-2 team">0</div>
+        </div>
+
+        <div class="bg"></div>
+
+        <div class="match mini-page">
+            <p id="timesadsadsa">30S</p>
+
+            <div class="btn" onclick="cancelmatchmaking()">DECLINE</div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+body {
+    background-color: transparent !important;
+    font-family: 'Lato', sans-serif;
+}
+
+.template, .notification {
+    display: none;
+}
+
+.notif-container {
+    width: 30%;
+    position: absolute;
+    right: 1%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.notification {
+    padding: 8px;
+    width: fit-content;
+    border-radius: 1px;
+    margin: 5px;
+    font: caption;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: rgba(50, 211, 39, 0.95); 
+    color: #fff;
+}
+
+.inform {
+    background-color: rgba(41, 134, 216, 0.85);
+    color: #ffffff;
+}
+
+.error {
+    background-color: rgba(212, 41, 47, 0.85);
+    color: #fff;
+}

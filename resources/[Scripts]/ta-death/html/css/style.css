@@ -1,0 +1,70 @@
+*{
+	overflow: hidden;
+	font-family: Montserrat;
+	user-select: none;
+}
+
+
+.bg {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: block;
+    opacity: 0;
+}
+
+.bg .player-char {
+    display: block;
+    background-image: url("");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 36.8%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 47.75%;
+    height: 12%;
+    width: 25%;
+    border-radius: 2px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.player-char .player-photo {
+    border-radius: 13%;
+    height: 80%;
+    width: 21%;
+    margin-top: 2%;
+    object-fit: cover;
+    object-position: 50% 15%;
+    margin-left: 8%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: black;
+}
+
+.player-char .player-name {
+    color: white;
+    margin-left: 37%;
+    margin-top: -19.5%;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.player-char .player-msg {
+    color: rgba(255, 255, 255, 0.76);
+    margin-left: 37%;
+    margin-top: 1%;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.player-char .player-health-armor {
+    color: rgb(255, 255, 255);
+    /* opacity: 1; */
+    margin-left: 37%;
+    margin-top: 5px;
+    font-size: 18px;
+}

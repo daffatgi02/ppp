@@ -1,0 +1,16 @@
+{
+    "TGI-CREW": {
+        "crewPhoto": "https://media.discordapp.net/attachments/1309375256523313214/1417786456704946177/AJfQ9KRFe-NHm4g_LOPI8Vjw1leJN8EAsyF4NXU-WQEROUNas3HpPj9YVrXoGs9AKkb8K7xW3sbMBw61rVWnCaWwgLMSaix2qwUlT0Qb2R49TScX85WJIk7pDHWmmPsF9ZinBNyAM_t3EiZcxSSHFUFmO71NApYtSPG_koREbLpJ3S_44qPkxgs1024.png?ex=68d3a908&is=68d25788&hm=927606b39f60f44bc455bf72fc7fdad950531a58e4154b7cd826c0ab6e5c36cd&=&format=webp&quality=lossless&width=953&height=953",
+        "death": 0,
+        "color": "#000000",
+        "leaders": [
+            "steam:110000112c36d63"
+        ],
+        "altname": "TGI",
+        "name": "TGI",
+        "kill": 999,
+        "members": [
+            "steam:110000112c36d63"
+        ]
+    }
+}
