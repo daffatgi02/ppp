@@ -1,0 +1,5 @@
+/* Override untuk fix crosshair display */
+#type {
+    display: block !important;
+    z-index: 9999 !important;
+}

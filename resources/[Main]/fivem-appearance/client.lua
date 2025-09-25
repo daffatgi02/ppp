@@ -133,6 +133,7 @@ AddEventHandler('esx_skin:ustaananisikm', function(submitCb, cancelCb)
 			Wait(500)
 			while not IsScreenFadedOut() do Citizen.Wait(100) end
 			Wait(500) DoScreenFadeIn(1500)
+			if submitCb ~= nil then submitCb() end
 		elseif cancelCb ~= nil then
 			cancelCb()
 		else
@@ -144,6 +145,7 @@ AddEventHandler('esx_skin:ustaananisikm', function(submitCb, cancelCb)
 			Wait(500)
 			while not IsScreenFadedOut() do Citizen.Wait(100) end
 			Wait(500) DoScreenFadeIn(1500)
+			if cancelCb ~= nil then cancelCb() end
 		end
 	end, config)
 end)
@@ -170,10 +172,9 @@ AddEventHandler('fivem-appearance:first:loadchar', function()
 	local currentPedModel = exports['fivem-appearance']:getPedModel(plyPed)
 	exports['fivem-appearance']:setPlayerModel(currentPedModel)
 
-	local appearance = exports['fivem-appearance']:getPedAppearance(plyPed)
 	ESX.TriggerServerCallback('fivem-appearance:getPlayerSkin', function(appearance)
-		exports['fivem-appearance']:setPlayerAppearance(appearance)
+		if appearance then
+			exports['fivem-appearance']:setPlayerAppearance(appearance)
+		end
 	end)
-
-	TriggerServerEvent('fivem-appearance:save', appearance)
- end)
+end)

@@ -464,7 +464,11 @@ RegisterNUICallback("kiyafetallahsehit", function()
     SetEntityVisible(PlayerPedId(), true, 0)
     SetLocalPlayerAsGhost(false)
     -- Trigger Side --
-    TriggerEvent("esx_skin:ustaananisikm")
+    TriggerEvent("esx_skin:ustaananisikm", function()
+        -- Submit callback - appearance saved successfully
+    end, function()
+        -- Cancel callback - appearance customization cancelled
+    end)
     while not IsScreenFadedOut() do Citizen.Wait(100) end
     Wait(200) DoScreenFadeIn(300)
     ------------------
