@@ -16,14 +16,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75vw;
-    max-width: 800px;
-    max-height: 70vh;
-    background: rgba(0, 0, 0, 0.3);
+    width: 55vw;
+    max-width: 650px;
+    max-height: 85vh;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     display: none;
     animation: fadeIn 0.3s ease-out;
-    padding: 5vw;
+    padding: 15px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -50,9 +51,10 @@ body {
 
 .leaderboard-header h1 {
     color: #ffffff;
-    font-size: 4vh;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .close-btn {
@@ -80,14 +82,15 @@ body {
 }
 
 .player-stats-container {
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
 }
 
 .player-stats-container h3 {
     color: #667eea;
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 10px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -101,9 +104,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 15px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 12px;
+    border-radius: 6px;
     border-left: 3px solid #667eea;
 }
 
@@ -118,22 +121,25 @@ body {
 }
 
 .leaderboard-content {
-    padding: 20px;
     max-height: 400px;
     overflow-y: auto;
 }
 
 .table-header {
     display: grid;
-    grid-template-columns: 50px 200px 80px 80px 80px 90px;
-    gap: 10px;
-    padding: 15px 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    grid-template-columns: 35px 170px 60px 60px 70px 90px;
+    gap: 6px;
+    padding: 8px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
     font-weight: 600;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.95);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 -8px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .table-body {
@@ -142,19 +148,20 @@ body {
 
 .leaderboard-row {
     display: grid;
-    grid-template-columns: 50px 200px 80px 80px 80px 90px;
-    gap: 10px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    grid-template-columns: 35px 170px 60px 60px 70px 90px;
+    gap: 6px;
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     align-items: center;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    margin-bottom: 5px;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    margin: 1px -8px;
+    font-size: 13px;
 }
 
 .leaderboard-row:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(3px);
 }
 
 .leaderboard-row.top-3 {
@@ -176,22 +183,24 @@ body {
 
 .rank {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     color: #667eea;
 }
 
 .player-name {
     font-weight: 600;
-    color: white;
+    color: #ffffff;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .kills, .deaths, .kda {
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .kills {
@@ -204,16 +213,16 @@ body {
 
 .kda {
     color: #fbbf24;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .player-rank {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     text-align: center;
-    padding: 4px 8px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 6px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
     text-transform: uppercase;
 }
 
@@ -226,30 +235,31 @@ body {
 }
 
 .key-highlight {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 600;
-    color: white;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Custom scrollbar */
 .leaderboard-content::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 .leaderboard-content::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
 }
 
 .leaderboard-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
 }
 
 .leaderboard-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /* TOP 3 Simple Text Display */
