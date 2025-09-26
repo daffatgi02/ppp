@@ -10,6 +10,10 @@ AddEventHandler('gameEventTriggered', function(event, data)
             -- if killerClientId == -1 then return end
             if not priv_lobbys and not matchmaking then
                 TriggerServerEvent("ta-base:server:addKill", killerServerId)
+                -- Trigger leaderboard update for farm_and_fight
+                if farm_and_fight then
+                    TriggerEvent('ta-leaderboard:kill-event', killerServerId, source)
+                end
             end
             if advanced_gungame then
                 TriggerServerEvent('ta-base:gamemodes:server:gungame:kill', killerServerId)
@@ -26,6 +30,10 @@ AddEventHandler('gameEventTriggered', function(event, data)
                 end
                 if not priv_lobbys and not matchmaking then
                     TriggerServerEvent("ta-base:server:playerDied")
+                    -- Trigger leaderboard update for farm_and_fight death
+                    if farm_and_fight then
+                        TriggerEvent('ta-leaderboard:death-event', source)
+                    end
                 end
                 if matchmaking then
                     matchmakingolusu = true

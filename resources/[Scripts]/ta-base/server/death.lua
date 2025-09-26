@@ -5,7 +5,7 @@ RegisterServerEvent("ta-base:server:addKill", function(killerId)
         local identifier = GetPlayerIdentifier(killerId, 0)
         MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = @identifier', {
             ["@identifier"] = identifier
-        }, function(result)            
+        }, function(result)
         killagaa = tonumber(result[1].kills)
         if killagaa < 500 then
             rank = "Bronze I"
@@ -57,6 +57,9 @@ RegisterServerEvent("ta-base:server:addKill", function(killerId)
         end
         if result[1].rank ~= rank then MySQL.Async.execute('UPDATE users SET rank = @rank WHERE identifier = @identifier',{['@identifier'] = identifier, ['@rank'] = rank}) end
         end)
+
+        -- Trigger leaderboard update for farm_and_fight
+        TriggerEvent('ta-leaderboard:updateKill', killerId, source)
 end)
 
 RegisterServerEvent("ta-base:server:playerDied", function()

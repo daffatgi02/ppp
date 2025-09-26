@@ -3,6 +3,7 @@ AddEventHandler('ta-base:server:weapons', function(gamemode, action, medkitarmor
     local src = source
     if gamemode == "farm_and_fight" then
         if action == "add" then
+            exports['ta-inv']:AddItem(src, "inventory", "weapon_heavysniper_mk2", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_custompistol", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_g17", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_g19", 1)
@@ -15,7 +16,6 @@ AddEventHandler('ta-base:server:weapons', function(gamemode, action, medkitarmor
             exports['ta-inv']:AddItem(src, "inventory", "weapon_customsmg_mk2", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_custommicrosmg", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_custommachinepistol", 1)
-            exports['ta-inv']:AddItem(src, "inventory", "weapon_customgusenberg", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_customassaultrifle", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_customassaultrifle_mk2", 1)
             exports['ta-inv']:AddItem(src, "inventory", "weapon_customcarbinerifle", 1)
@@ -28,7 +28,7 @@ AddEventHandler('ta-base:server:weapons', function(gamemode, action, medkitarmor
             exports['ta-inv']:AddItem(src, "inventory", "ninef", 1)
             exports['ta-inv']:AddItem(src, "inventory", "jester", 1)
             exports['ta-inv']:AddItem(src, "inventory", "dominator7", 1)
-            exports['ta-inv']:AddItem(src, "inventory", "kamacho", 1)
+            exports['ta-inv']:AddItem(src, "inventory", "buzzard", 1)
             print('allahcarpsinsilahiverdim')
         elseif action == "remove" then
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_pistol", 1)
@@ -43,7 +43,6 @@ AddEventHandler('ta-base:server:weapons', function(gamemode, action, medkitarmor
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_microsmg", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_combatpdw", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_machinepistol", 1)
-            exports['ta-inv']:RemoveItem(src, "inventory", "weapon_gusenberg", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_assaultrifle", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_assaultrifle_mk2", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "weapon_carbinerifle", 1)
@@ -99,7 +98,6 @@ AddEventHandler('ta-base:server:weapons', function(gamemode, action, medkitarmor
             exports['ta-inv']:RemoveItem(src, "inventory", "ninef", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "jester", 1)
             exports['ta-inv']:RemoveItem(src, "inventory", "dominator7", 1)
-            exports['ta-inv']:RemoveItem(src, "inventory", "kamacho", 1)
             print('allahcarpsinsilahialdim')
         end
     elseif gamemode == "default_damaged_only_pistol" then

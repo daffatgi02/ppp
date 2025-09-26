@@ -60,8 +60,8 @@ Items = {
         useItemInfo = false,
         rarity = "epic" 
     },
-    ["weapon_gusenberg"] = {
-        label = "Gusenberg Sweeper",
+    ["weapon_heavysniper_mk2"] = {
+        label = "AWP MK II",
         type = "weapon",
         useItemInfo = false,
         rarity = "epic" 
@@ -494,12 +494,12 @@ Items = {
         useItemInfo = false,
         rarity = "dominator7" 
     },
-    ["kamacho"] = {
-        label = "Kamacho",
+    ["buzzard"] = {
+        label = "Buzzard",
         type = "ff_car",
         useItemInfo = false,
-        rarity = "kamacho" 
-    }
+        rarity = "epic" 
+    },
     ----------------------------------------------
     -- ["zr380"] = {
     --     label = "Apocalypse ZR380",
@@ -563,12 +563,6 @@ Items = {
     -- },
     -- ["xls2"] = {
     --     label = "Armored XLS",
-    --     type = "ff_car",
-    --     useItemInfo = false,
-    --     rarity = "epic" 
-    -- },
-    -- ["vigilante"] = {
-    --     label = "Vigilante",
     --     type = "ff_car",
     --     useItemInfo = false,
     --     rarity = "epic" 

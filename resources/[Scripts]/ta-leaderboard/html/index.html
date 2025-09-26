@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm & Fight Leaderboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- TOP 3 Simple Text Display -->
+    <div id="top3-container" class="top3-container">
+        <div class="top3-text">
+            <div class="top3-title">TOP 3 LEADERBOARD</div>
+            <div id="top3-list"></div>
+        </div>
+    </div>
+
+    <!-- F6 Full Leaderboard Modal -->
+    <div id="leaderboard" class="leaderboard-container">
+        <div class="leaderboard-header">
+            <h1>FARM & FIGHT LEADERBOARD (TOP 10)</h1>
+            <button class="close-btn" onclick="closeLeaderboard()">✕</button>
+        </div>
+
+        <div class="player-stats-container">
+            <h3>Your Stats</h3>
+            <div class="player-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Name:</span>
+                    <span class="stat-value" id="player-name">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Kills:</span>
+                    <span class="stat-value" id="player-kills">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Deaths:</span>
+                    <span class="stat-value" id="player-deaths">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">KDA:</span>
+                    <span class="stat-value" id="player-kda">0.00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Rank:</span>
+                    <span class="stat-value" id="player-rank">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="leaderboard-content">
+            <div class="table-header">
+                <div class="rank-header">#</div>
+                <div class="name-header">Player</div>
+                <div class="kills-header">Kills</div>
+                <div class="deaths-header">Deaths</div>
+                <div class="kda-header">KDA</div>
+                <div class="rank-header-text">Rank</div>
+            </div>
+            <div class="table-body" id="leaderboard-data">
+                <!-- Leaderboard data will be populated here -->
+            </div>
+        </div>
+
+        <div class="leaderboard-footer">
+            <p>Press <span class="key-highlight">F6</span> to toggle • Updates every second</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

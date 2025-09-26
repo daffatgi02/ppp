@@ -9,39 +9,39 @@ farm_and_fight_safe_5 = {x = 2099.277, y = 2328.874, z = 94.503}
 farm_and_fight_safe_6 = {x = 1971.349, y = 3704.855, z = 32.438}
 farm_and_fight_safe_7 = {x = -58.9580, y = 6280.847, z = 31.563}
 
-farm_and_fight_safe_zone_1 = CircleZone:Create(vector3(farm_and_fight_safe_1.x, farm_and_fight_safe_1.y, farm_and_fight_safe_1.z), 120.0, {
+farm_and_fight_safe_zone_1 = CircleZone:Create(vector3(farm_and_fight_safe_1.x, farm_and_fight_safe_1.y, farm_and_fight_safe_1.z), 8.0, {
 	name="farm_and_fight_safe_zone_1",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_2 = CircleZone:Create(vector3(farm_and_fight_safe_2.x, farm_and_fight_safe_2.y, farm_and_fight_safe_2.z), 120.0, {
+farm_and_fight_safe_zone_2 = CircleZone:Create(vector3(farm_and_fight_safe_2.x, farm_and_fight_safe_2.y, farm_and_fight_safe_2.z), 8.0, {
 	name="farm_and_fight_safe_zone_1",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_3 = CircleZone:Create(vector3(farm_and_fight_safe_3.x, farm_and_fight_safe_3.y, farm_and_fight_safe_3.z), 120.0, {
+farm_and_fight_safe_zone_3 = CircleZone:Create(vector3(farm_and_fight_safe_3.x, farm_and_fight_safe_3.y, farm_and_fight_safe_3.z), 8.0, {
 	name="farm_and_fight_safe_zone_3",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_4 = CircleZone:Create(vector3(farm_and_fight_safe_4.x, farm_and_fight_safe_4.y, farm_and_fight_safe_4.z), 120.0, {
+farm_and_fight_safe_zone_4 = CircleZone:Create(vector3(farm_and_fight_safe_4.x, farm_and_fight_safe_4.y, farm_and_fight_safe_4.z), 8.0, {
 	name="farm_and_fight_safe_zone_4",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_5 = CircleZone:Create(vector3(farm_and_fight_safe_5.x, farm_and_fight_safe_5.y, farm_and_fight_safe_5.z), 120.0, {
+farm_and_fight_safe_zone_5 = CircleZone:Create(vector3(farm_and_fight_safe_5.x, farm_and_fight_safe_5.y, farm_and_fight_safe_5.z), 8.0, {
 	name="farm_and_fight_safe_zone_5",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_6 = CircleZone:Create(vector3(farm_and_fight_safe_6.x, farm_and_fight_safe_6.y, farm_and_fight_safe_6.z), 120.0, {
+farm_and_fight_safe_zone_6 = CircleZone:Create(vector3(farm_and_fight_safe_6.x, farm_and_fight_safe_6.y, farm_and_fight_safe_6.z), 8.0, {
 	name="farm_and_fight_safe_zone_6",
-	debugPoly=false,
+	debugPoly=true,
 })
 
-farm_and_fight_safe_zone_7 = CircleZone:Create(vector3(farm_and_fight_safe_7.x, farm_and_fight_safe_7.y, farm_and_fight_safe_7.z), 120.0, {
+farm_and_fight_safe_zone_7 = CircleZone:Create(vector3(farm_and_fight_safe_7.x, farm_and_fight_safe_7.y, farm_and_fight_safe_7.z), 8.0, {
 	name="farm_and_fight_safe_zone_7",
-	debugPoly=false,
+	debugPoly=true,
 })
 
 function FF_Spawn(first)
@@ -73,37 +73,37 @@ function FF_Spawn(first)
 end
 
 function FF_CreateBlip()
-    farm_and_fight_safe_1_blip = AddBlipForRadius(farm_and_fight_safe_1.x, farm_and_fight_safe_1.y, farm_and_fight_safe_1.z, 120.0)
+    farm_and_fight_safe_1_blip = AddBlipForRadius(farm_and_fight_safe_1.x, farm_and_fight_safe_1.y, farm_and_fight_safe_1.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_1_blip, true)
     SetBlipColour(farm_and_fight_safe_1_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_1_blip, 90)
     farm_and_fight_safe_1_main_blip = MainBlip(farm_and_fight_safe_1.x, farm_and_fight_safe_1.y, farm_and_fight_safe_1.z, "Safe")
-    farm_and_fight_safe_2_blip = AddBlipForRadius(farm_and_fight_safe_2.x, farm_and_fight_safe_2.y, farm_and_fight_safe_2.z, 120.0)
+    farm_and_fight_safe_2_blip = AddBlipForRadius(farm_and_fight_safe_2.x, farm_and_fight_safe_2.y, farm_and_fight_safe_2.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_2_blip, true)
     SetBlipColour(farm_and_fight_safe_2_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_2_blip, 90)
     farm_and_fight_safe_2_main_blip = MainBlip(farm_and_fight_safe_2.x, farm_and_fight_safe_2.y, farm_and_fight_safe_2.z, "Safe 2")
-    farm_and_fight_safe_3_blip = AddBlipForRadius(farm_and_fight_safe_3.x, farm_and_fight_safe_3.y, farm_and_fight_safe_3.z, 120.0)
+    farm_and_fight_safe_3_blip = AddBlipForRadius(farm_and_fight_safe_3.x, farm_and_fight_safe_3.y, farm_and_fight_safe_3.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_3_blip, true)
     SetBlipColour(farm_and_fight_safe_3_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_3_blip, 90)
     farm_and_fight_safe_3_main_blip = MainBlip(farm_and_fight_safe_3.x, farm_and_fight_safe_3.y, farm_and_fight_safe_3.z, "Safe 3")
-    farm_and_fight_safe_4_blip = AddBlipForRadius(farm_and_fight_safe_4.x, farm_and_fight_safe_4.y, farm_and_fight_safe_4.z, 120.0)
+    farm_and_fight_safe_4_blip = AddBlipForRadius(farm_and_fight_safe_4.x, farm_and_fight_safe_4.y, farm_and_fight_safe_4.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_4_blip, true)
     SetBlipColour(farm_and_fight_safe_4_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_4_blip, 90)
     farm_and_fight_safe_4_main_blip = MainBlip(farm_and_fight_safe_4.x, farm_and_fight_safe_4.y, farm_and_fight_safe_4.z, "Safe 4")
-    farm_and_fight_safe_5_blip = AddBlipForRadius(farm_and_fight_safe_5.x, farm_and_fight_safe_5.y, farm_and_fight_safe_5.z, 120.0)
+    farm_and_fight_safe_5_blip = AddBlipForRadius(farm_and_fight_safe_5.x, farm_and_fight_safe_5.y, farm_and_fight_safe_5.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_5_blip, true)
     SetBlipColour(farm_and_fight_safe_5_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_5_blip, 90)
     farm_and_fight_safe_5_main_blip = MainBlip(farm_and_fight_safe_5.x, farm_and_fight_safe_5.y, farm_and_fight_safe_5.z, "Safe 5")
-    farm_and_fight_safe_6_blip = AddBlipForRadius(farm_and_fight_safe_6.x, farm_and_fight_safe_6.y, farm_and_fight_safe_6.z, 120.0)
+    farm_and_fight_safe_6_blip = AddBlipForRadius(farm_and_fight_safe_6.x, farm_and_fight_safe_6.y, farm_and_fight_safe_6.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_6_blip, true)
     SetBlipColour(farm_and_fight_safe_6_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_6_blip, 90)
     farm_and_fight_safe_6_main_blip = MainBlip(farm_and_fight_safe_6.x, farm_and_fight_safe_6.y, farm_and_fight_safe_6.z, "Safe 6")
-    farm_and_fight_safe_7_blip = AddBlipForRadius(farm_and_fight_safe_7.x, farm_and_fight_safe_7.y, farm_and_fight_safe_7.z, 120.0)
+    farm_and_fight_safe_7_blip = AddBlipForRadius(farm_and_fight_safe_7.x, farm_and_fight_safe_7.y, farm_and_fight_safe_7.z, 8.0)
     SetBlipHighDetail(farm_and_fight_safe_7_blip, true)
     SetBlipColour(farm_and_fight_safe_7_blip, 2)
     SetBlipAlpha(farm_and_fight_safe_7_blip, 90)

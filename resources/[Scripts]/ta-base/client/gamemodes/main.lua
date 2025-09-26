@@ -54,6 +54,7 @@ function JoinGameMode(gamemode)
     if gamemode == "farm_and_fight" then
         farm_and_fight = true
         TriggerEvent('ta-basics:general-hud', "show", "FREE LOBBY")
+        TriggerEvent('ta-leaderboard:gamemode-changed', "farm_and_fight", true)
     elseif gamemode == "default_damaged_only_pistol" then
         default_damaged_only_pistol = true
         TriggerEvent('ta-basics:general-hud', "show", "DEFAULT DAMAGED ONLY PISTOL")

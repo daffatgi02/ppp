@@ -271,6 +271,8 @@ AddEventHandler('ta-base:client:close-main-menu', function(gamemode)
         FF_CreateBlip()
         FF_Spawn(true)
         inFF = true
+        -- Trigger leaderboard after everything is set up
+        TriggerEvent('ta-leaderboard:gamemode-changed', "farm_and_fight", true)
     elseif gamemode == "custom_damaged_only_deluxo" then
         TriggerServerEvent('ta-base:server:clear-inv')
         TriggerEvent('ta-inv:client:inv_default', "join")
@@ -537,6 +539,7 @@ function refreshMods()
     inFF = false
     driveby_car = nil
     farm_and_fight = false
+    TriggerEvent('ta-leaderboard:gamemode-changed', "farm_and_fight", false)
     default_damaged_only_pistol = false
     default_damaged_only_pistol_2 = false
     default_damaged_only_ap_pistol = false
